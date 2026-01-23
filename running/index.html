@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Running | Fiona Young</title>
 
   <style>
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      max-width: 900px;
+      max-width: 980px;
       margin: 0 auto;
       padding: 0 1.2rem;
       line-height: 1.6;
@@ -23,7 +22,7 @@
       justify-content: space-between;
       padding: 1.25rem 0;
       border-bottom: 1px solid #e5e7eb;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
     .brand {
       font-weight: 700;
@@ -38,205 +37,579 @@
     }
     .navlinks a:hover { text-decoration: underline; }
 
-    h1 {
-      font-size: 2.4rem;
-      margin-bottom: 0.5rem;
+    h1 { font-size: 2.4rem; margin: 0 0 0.25rem; }
+    p.muted { color: #555; margin-top: 0.25rem; }
+
+    /* Summary box */
+    .summary {
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 1rem 1.1rem;
+      margin: 1.5rem 0 2rem;
+      background: #fff;
     }
-    h2 {
-      margin-top: 2.5rem;
-      border-bottom: 1px solid #e5e7eb;
-      padding-bottom: 0.3rem;
+    .summary h2 {
+      font-size: 1.1rem;
+      margin: 0 0 0.6rem;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.75rem;
+      margin: 0.5rem 0 0;
+    }
+    .stat {
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 0.75rem 0.85rem;
+      background: #fff;
+    }
+    .stat .label { color: #555; font-size: 0.9rem; }
+    .stat .value { font-weight: 700; font-size: 1.25rem; margin-top: 0.1rem; }
+
+    /* Controls */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin: 1rem 0 0.5rem;
+    }
+    .controls input, .controls select {
+      padding: 0.55rem 0.65rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      min-width: 220px;
+    }
+    .controls label {
+      color: #555;
+      font-size: 0.95rem;
     }
 
+    /* Tables */
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 1rem;
+      margin-top: 0.75rem;
       font-size: 0.95rem;
     }
     th, td {
       text-align: left;
       border-bottom: 1px solid #e5e7eb;
-      padding: 0.5rem 0.4rem;
+      padding: 0.55rem 0.45rem;
       vertical-align: top;
     }
-    th {
-      font-weight: 650;
-      white-space: nowrap;
-    }
+    th { font-weight: 650; white-space: nowrap; }
 
-    .note {
-      margin: 2rem 0;
-      font-size: 0.95rem;
-      color: #555;
+    /* Details (collapsible sections) */
+    details {
+      margin: 1.25rem 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 0.9rem 1rem;
+      background: #fff;
     }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    details > .content { margin-top: 0.85rem; }
 
+    /* Status “pills” */
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.9rem;
+      margin: 0.25rem 0.35rem 0.25rem 0;
+      user-select: none;
+    }
+    .ok { border-color: #c7f9cc; background: #f1fff3; }
+    .no { border-color: #ffe0e0; background: #fff5f5; }
+    .dot {
+      width: 10px; height: 10px; border-radius: 999px;
+      background: #bbb;
+      flex: 0 0 auto;
+    }
+    .ok .dot { background: #16a34a; }
+    .no .dot { background: #ef4444; }
+
+    /* Wishlist lists */
+    ul { margin: 0.6rem 0 0.2rem 1.25rem; }
+
+    /* Mobile */
     @media (max-width: 640px) {
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.75rem;
-      }
-      .navlinks a {
-        margin-left: 0;
-        margin-right: 1rem;
-      }
+      .nav { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+      .navlinks a { margin-left: 0; margin-right: 1rem; }
+      .controls input, .controls select { min-width: 0; width: 100%; }
     }
   </style>
 </head>
 
 <body>
   <nav class="nav">
-  <a class="brand" href="/">Fiona Young</a>
-  <div class="navlinks">
-    <a href="/mission/">Mission</a>
-    <a href="/math/">Math</a>
-    <a href="/education/">Education</a>
-    <a href="/running/">Running</a>
-    <a href="/contact/">Contact</a>
-  </div>
-</nav>
+    <a class="brand" href="/">Fiona Young</a>
+    <div class="navlinks">
+      <a href="/running/">Running</a>
+      <a href="/projects/">Projects</a>
+      <a href="/writing/">Writing</a>
+      <a href="/about/">About</a>
+    </div>
+  </nav>
 
   <h1>Running</h1>
+  <p class="muted">Upcoming races, personal bests, and race results (chip time).</p>
 
-  <h2>Upcoming Races</h2>
-<table>
-  <tbody>
-    <tr><td>RELAY</td><td>U.S. Polo Assn. Palm Beaches Marathon Relay</td><td>12.14.25</td></tr>
-    <tr><td>4M</td><td>NYRR Midnight Run</td><td>12.31.25</td></tr>
-    <tr><td>50K</td><td>The Cowtown</td><td>3.1.26</td></tr>
-    <tr><td>26.2M</td><td>Marine Corps Marathon</td><td>10.25.26</td></tr>
-  </tbody>
-</table>
-
-<h2>Deferred Races</h2>
-<table>
-  <tbody>
-    <tr><td>26.2M</td><td>California International Marathon</td><td>12.7.25 (running in 2026)</td></tr>
-  </tbody>
-</table>
-
-<h2>Personal Bests</h2>
-<table>
-  <tbody>
-    <tr><td>5K</td><td>21:45</td><td>Cambridge Spring Classic</td><td>5.1.22</td></tr>
-    <tr><td>5M</td><td>38:56</td><td>Super Sunday</td><td>2.13.22</td></tr>
-    <tr><td>13.1M</td><td>1:44:55</td><td>Shamrock Half Marathon</td><td>3.20.22</td></tr>
-    <tr><td>26.2M</td><td>3:51:05</td><td>BoA Chicago Marathon</td><td>10.12.25</td></tr>
-  </tbody>
-</table>
-
-<h2>Race Results (chip time)</h2>
-<p class="muted">Listed by year.</p>
-
-  
-  <p>Race results (chip time).</p>
-
-  <h2>2025</h2>
-  <table>
-    <tbody>
-      <tr><td>5K</td><td>22:39</td><td>Greenwich Alliance Turkey Trot</td><td>11.29.25</td></tr>
-      <tr><td>26.2M</td><td>3:57:05</td><td>The Elliot Manchester City Marathon</td><td>11.9.25</td></tr>
-      <tr><td>26.2M</td><td>3:51:05</td><td>BoA Chicago Marathon</td><td>10.12.25</td></tr>
-      <tr><td>26.2M</td><td>4:13:24</td><td>BMW Berlin Marathon</td><td>9.21.25</td></tr>
-      <tr><td>1M</td><td>6:51</td><td>4th Annual Miami Mile</td><td>5.31.25</td></tr>
-      <tr><td>5K</td><td>24:31</td><td>Purple Pride 5K (2nd AG)</td><td>5.17.25</td></tr>
-      <tr><td>5K</td><td>23:00</td><td>Miami Lexus Corporate Run</td><td>4.24.25</td></tr>
-      <tr><td>13.1M</td><td>1:48:50</td><td>Doral Half Marathon (2nd AG)</td><td>4.13.25</td></tr>
-    </tbody>
-  </table>
-
-  <h2>2024</h2>
-  <table>
-    <tbody>
-      <tr><td>5K</td><td>22:43</td><td>Greenwich Alliance Turkey Trot</td><td>11.30.24</td></tr>
-      <tr><td>26.2M</td><td>4:01:12</td><td>AACR Philadelphia Marathon</td><td>11.24.24</td></tr>
-      <tr><td>5K</td><td>23:48</td><td>Miami Runway 5K (2nd AG)</td><td>10.19.24</td></tr>
-      <tr><td>1M</td><td>6:36</td><td>26x1 Mile Club Challenge Relay Invitational</td><td>6.8.24</td></tr>
-      <tr><td>8K</td><td>37:51</td><td>Run & Walk with Pride</td><td>6.2.24</td></tr>
-      <tr><td>13.1M</td><td>1:50:52</td><td>Soul Ryeders Half Marathon</td><td>5.19.24</td></tr>
-      <tr><td>13.1M</td><td>1:53:51</td><td>Queens Spring Half (1st AG)</td><td>3.30.24</td></tr>
-    </tbody>
-  </table>
-
-  <h2>2023</h2>
-  <table>
-    <tbody>
-      <tr><td>5K</td><td>24:45</td><td>The Queens New Year's Eve 5K (1st AG)</td><td>12.31.23</td></tr>
-      <tr><td>5K</td><td>25:14</td><td>Greenwich Alliance Turkey Trot</td><td>11.25.23</td></tr>
-      <tr><td>5K</td><td>27:33</td><td>Super Sunday</td><td>2.12.23</td></tr>
-    </tbody>
-  </table>
-
-  <div class="note">
-    June 2022 – November 2023: mysterious ankle injury 😭
+  <!-- Summary (auto-computed) -->
+  <div class="summary">
+    <h2>Summary</h2>
+    <div class="stats" id="stats"></div>
   </div>
 
-  <h2>2022</h2>
-  <table>
-    <tbody>
-      <tr><td>5K</td><td>21:45</td><td>Cambridge Spring Classic</td><td>5.1.22</td></tr>
-      <tr><td>13.1M</td><td>1:44:55</td><td>Shamrock Half Marathon</td><td>3.20.22</td></tr>
-      <tr><td>5M</td><td>38:56</td><td>Super Sunday</td><td>2.13.22</td></tr>
-    </tbody>
-  </table>
+  <!-- Upcoming / Deferred / PBs -->
+  <details open>
+    <summary>Upcoming Races</summary>
+    <div class="content" id="upcomingSection"></div>
+  </details>
 
-  <h2>2021</h2>
-  <table>
-    <tbody>
-      <tr><td>5K</td><td>22:56</td><td>Cambridge Winter Classic</td><td>12.5.21</td></tr>
-      <tr><td>5K</td><td>24:06</td><td>Greenwich Alliance Turkey Trot (3rd AG)</td><td>11.27.21</td></tr>
-      <tr><td>6K XC</td><td>30:42</td><td>USATF-NE XC Championship</td><td>11.7.21</td></tr>
-      <tr><td>26.2M</td><td>4:26:46</td><td>Hartford Marathon</td><td>10.9.21</td></tr>
-      <tr><td>10K</td><td>53:52</td><td>Lone Gull</td><td>9.19.21</td></tr>
-    </tbody>
-  </table>
+  <details open>
+    <summary>Deferred Races</summary>
+    <div class="content" id="deferredSection"></div>
+  </details>
 
-  <h2>Earlier</h2>
-  <table>
-    <tbody>
-      <tr><td>13.1M</td><td>1:58:48</td><td>Lake Effect Half Marathon</td><td>2.23.20</td></tr>
-      <tr><td>5K</td><td>21:41</td><td>Greenwich Alliance Turkey Trot (3rd AG)</td><td>11.30.19</td></tr>
-      <tr><td>5K XC</td><td>25:28</td><td>PGXC Race 2</td><td>9.22.19</td></tr>
-      <tr><td>10K</td><td>52:33</td><td>45th Annual Ithaca 5 & 10</td><td>9.15.19</td></tr>
-      <tr><td>13.1M</td><td>2:01:03</td><td>Lake Effect Half Marathon (3rd AG)</td><td>2.24.19</td></tr>
-      <tr><td>4K XC</td><td>20:17</td><td>FCIAC XC Championships</td><td>10.24.11</td></tr>
-      <tr><td>2.5K XC</td><td>11:45</td><td>FCIAC XC Championships</td><td>10.21.10</td></tr>
-    </tbody>
-  </table>
+  <details open>
+    <summary>Personal Bests</summary>
+    <div class="content" id="pbsSection"></div>
+  </details>
 
-  <h2>Race Wishlist</h2>
+  <!-- Results with filtering/sorting -->
+  <details open>
+    <summary>Race Results (chip time)</summary>
+    <div class="content">
+      <div class="controls">
+        <label>
+          Search:
+          <input id="search" type="text" placeholder="race, location, notes, distance…" />
+        </label>
 
-<p class="muted">
-  Abbott World Marathon Majors (have yet to win any lotteries! 😢)
-</p>
+        <label>
+          Distance:
+          <select id="distanceFilter">
+            <option value="">All</option>
+          </select>
+        </label>
 
-<ul>
-  <li>Tokyo ❌</li>
-  <li>Boston ❌</li>
-  <li>London ❌</li>
-  <li>Sydney ❌</li>
-  <li>Berlin ✅ 2025</li>
-  <li>Chicago ✅ 2025</li>
-  <li>NYC ❌</li>
-</ul>
+        <label>
+          Sort:
+          <select id="sortBy">
+            <option value="date-desc">Date (newest → oldest)</option>
+            <option value="date-asc">Date (oldest → newest)</option>
+            <option value="time-asc">Time (fastest → slowest)</option>
+            <option value="time-desc">Time (slowest → fastest)</option>
+          </select>
+        </label>
+      </div>
 
-<ul>
-  <li>Big Sur International Marathon</li>
-  <li>San Francisco Marathon</li>
-  <li>Baystate Marathon</li>
-  <li>Martha's Vineyard Marathon</li>
-  <li>Wineglass Marathon</li>
-  <li>Cambridge Half Marathon</li>
-  <li>RBC Brooklyn Half</li>
-  <li>Abbott Dash to the Finish Line</li>
-  <li>Oahu Pentathlon</li>
-  <li>Athens Marathon</li>
-  <li>Poznan Marathon</li>
-  <li>Spar Budapest Marathon</li>
-</ul>
+      <div class="muted" style="margin-top:0.5rem;">
+        June 2022 – November 2023: mysterious ankle injury 😭
+      </div>
 
+      <div id="resultsTable"></div>
+    </div>
+  </details>
 
+  <!-- Wishlist -->
+  <details open>
+    <summary>Race Wishlist</summary>
+    <div class="content">
+      <p class="muted">Abbott World Marathon Majors (have yet to win any lotteries! 😢)</p>
+      <div id="majorsStatus"></div>
 
+      <h3 style="margin-top:1.25rem;">Other races</h3>
+      <ul>
+        <li>Big Sur International Marathon</li>
+        <li>San Francisco Marathon</li>
+        <li>Baystate Marathon</li>
+        <li>Martha's Vineyard Marathon</li>
+        <li>Wineglass Marathon</li>
+        <li>Cambridge Half Marathon</li>
+        <li>RBC Brooklyn Half</li>
+        <li>Abbott Dash to the Finish Line</li>
+        <li>Oahu Pentathlon</li>
+        <li>Athens Marathon</li>
+        <li>Poznan Marathon</li>
+        <li>Spar Budapest Marathon</li>
+      </ul>
+    </div>
+  </details>
+
+  <script>
+    // ----------------------------
+    // DATA (edit this, and everything else updates)
+    // ----------------------------
+    const upcoming = [
+      { distance: "RELAY", race: "U.S. Polo Assn. Palm Beaches Marathon Relay", date: "2025-12-14" },
+      { distance: "4M", race: "NYRR Midnight Run", date: "2025-12-31" },
+      { distance: "50K", race: "The Cowtown", date: "2026-03-01" },
+      { distance: "26.2M", race: "Marine Corps Marathon", date: "2026-10-25" },
+    ];
+
+    const deferred = [
+      { distance: "26.2M", race: "California International Marathon", date: "2025-12-07", notes: "running in 2026" },
+    ];
+
+    const pbs = [
+      { distance: "5K", time: "21:45", race: "Cambridge Spring Classic", date: "2022-05-01" },
+      { distance: "5M", time: "38:56", race: "Super Sunday", date: "2022-02-13" },
+      { distance: "13.1M", time: "1:44:55", race: "Shamrock Half Marathon", date: "2022-03-20" },
+      { distance: "26.2M", time: "3:51:05", race: "BoA Chicago Marathon", date: "2025-10-12" },
+    ];
+
+    // Race results (chip time) — exact info you gave, just normalized dates for sorting
+    const races = [
+      // 2025
+      { year: 2025, distance: "5K", time: "22:39", race: "Greenwich Alliance Turkey Trot", date: "2025-11-29", notes: "" },
+      { year: 2025, distance: "26.2M", time: "3:57:05", race: "The Elliot Manchester City Marathon", date: "2025-11-09", notes: "" },
+      { year: 2025, distance: "26.2M", time: "3:51:05", race: "BoA Chicago Marathon", date: "2025-10-12", notes: "" },
+      { year: 2025, distance: "26.2M", time: "4:13:24", race: "BMW Berlin Marathon", date: "2025-09-21", notes: "" },
+      { year: 2025, distance: "1M", time: "6:51", race: "4th Annual Miami Mile", date: "2025-05-31", notes: "" },
+      { year: 2025, distance: "5K", time: "24:31", race: "Purple Pride 5K", date: "2025-05-17", notes: "2nd AG" },
+      { year: 2025, distance: "5K", time: "23:00", race: "Miami Lexus Corporate Run", date: "2025-04-24", notes: "" },
+      { year: 2025, distance: "13.1M", time: "1:48:50", race: "Doral Half Marathon", date: "2025-04-13", notes: "2nd AG" },
+
+      // 2024
+      { year: 2024, distance: "5K", time: "22:43", race: "Greenwich Alliance Turkey Trot", date: "2024-11-30", notes: "" },
+      { year: 2024, distance: "26.2M", time: "4:01:12", race: "AACR Philadelphia Marathon", date: "2024-11-24", notes: "" },
+      { year: 2024, distance: "5K", time: "23:48", race: "Miami Runway 5K", date: "2024-10-19", notes: "2nd AG" },
+      { year: 2024, distance: "1M", time: "6:36", race: "26x1 Mile Club Challenge Relay Invitational", date: "2024-06-08", notes: "" },
+      { year: 2024, distance: "8K", time: "37:51", race: "Run & Walk with Pride", date: "2024-06-02", notes: "" },
+      { year: 2024, distance: "13.1M", time: "1:50:52", race: "Soul Ryeders Half Marathon", date: "2024-05-19", notes: "" },
+      { year: 2024, distance: "13.1M", time: "1:53:51", race: "Queens Spring Half", date: "2024-03-30", notes: "1st AG" },
+
+      // 2023
+      { year: 2023, distance: "5K", time: "24:45", race: "The Queens New Year's Eve 5K", date: "2023-12-31", notes: "1st AG" },
+      { year: 2023, distance: "5K", time: "25:14", race: "Greenwich Alliance Turkey Trot", date: "2023-11-25", notes: "" },
+      { year: 2023, distance: "5K", time: "27:33", race: "Super Sunday", date: "2023-02-12", notes: "" },
+
+      // 2022
+      { year: 2022, distance: "5K", time: "21:45", race: "Cambridge Spring Classic", date: "2022-05-01", notes: "" },
+      { year: 2022, distance: "13.1M", time: "1:44:55", race: "Shamrock Half Marathon", date: "2022-03-20", notes: "" },
+      { year: 2022, distance: "5M", time: "38:56", race: "Super Sunday", date: "2022-02-13", notes: "" },
+
+      // 2021
+      { year: 2021, distance: "5K", time: "22:56", race: "Cambridge Winter Classic", date: "2021-12-05", notes: "" },
+      { year: 2021, distance: "5K", time: "24:06", race: "Greenwich Alliance Turkey Trot", date: "2021-11-27", notes: "3rd AG" },
+      { year: 2021, distance: "6K XC", time: "30:42", race: "USATF-NE XC Championship", date: "2021-11-07", notes: "" },
+      { year: 2021, distance: "26.2M", time: "4:26:46", race: "Hartford Marathon", date: "2021-10-09", notes: "" },
+      { year: 2021, distance: "10K", time: "53:52", race: "Lone Gull", date: "2021-09-19", notes: "" },
+
+      // 2020
+      { year: 2020, distance: "13.1M", time: "1:58:48", race: "Lake Effect Half Marathon", date: "2020-02-23", notes: "" },
+
+      // 2019
+      { year: 2019, distance: "5K", time: "21:41", race: "Greenwich Alliance Turkey Trot", date: "2019-11-30", notes: "3rd AG (not quite)" },
+      { year: 2019, distance: "5K XC", time: "25:28", race: "PGXC Race 2", date: "2019-09-22", notes: "" },
+      { year: 2019, distance: "10K", time: "52:33", race: "45th Annual Ithaca 5 & 10", date: "2019-09-15", notes: "" },
+      { year: 2019, distance: "5K", time: "24:20", race: "Ithaca Tompkins Regional Airport Runway 5K", date: "2019-09-14", notes: "" },
+      { year: 2019, distance: "5M", time: "40:57", race: "Park City 5K and 5 Mile Road Race", date: "2019-05-26", notes: "10th Female" },
+      { year: 2019, distance: "5K", time: "25:09", race: "Cayuga Heights Elementary School", date: "2019-05-11", notes: "2nd Female" },
+      { year: 2019, distance: "5K", time: "25:12", race: "Belle Sherman 5K & Fun Run", date: "2019-04-27", notes: "" },
+      { year: 2019, distance: "13.1M", time: "2:05:04", race: "38th Annual Skunk Cabbage Classic", date: "2019-04-07", notes: "" },
+      { year: 2019, distance: "13.1M", time: "2:01:03", race: "Lake Effect Half Marathon", date: "2019-02-24", notes: "3rd AG" },
+
+      // 2018
+      { year: 2018, distance: "5K", time: "26:40", race: "Dryden Rotary Fall Dash", date: "2018-10-20", notes: "" },
+      { year: 2018, distance: "10K Trail", time: "1:19:44", race: "Danby Down & Dirty", date: "2018-10-06", notes: "" },
+      { year: 2018, distance: "5K", time: "27:56", race: "Cambridge Spring Classic", date: "2018-04-22", notes: "" },
+
+      // 2017
+      { year: 2017, distance: "5K", time: "26:33", race: "Cambridge Winter Classic", date: "2017-12-03", notes: "" },
+      { year: 2017, distance: "5K", time: "29:35", race: "Brian Honan Road Race", date: "2017-09-24", notes: "" },
+
+      // 2016
+      { year: 2016, distance: "5K", time: "28:33", race: "Cambridge Winter Classic", date: "2016-12-04", notes: "" },
+
+      // 2011
+      { year: 2011, distance: "4K XC", time: "20:17", race: "FCIAC XC Championships", date: "2011-10-24", notes: "" },
+
+      // 2010
+      { year: 2010, distance: "2.5K XC", time: "11:45", race: "FCIAC XC Championships", date: "2010-10-21", notes: "" },
+    ];
+
+    // Majors status will auto-update based on results (Berlin/Chicago counted as done)
+    const majors = [
+      { name: "Tokyo", key: "Tokyo" },
+      { name: "Boston", key: "Boston" },
+      { name: "London", key: "London" },
+      { name: "Sydney", key: "Sydney" },
+      { name: "Berlin", key: "Berlin" },
+      { name: "Chicago", key: "Chicago" },
+      { name: "NYC", key: "NYC" },
+    ];
+
+    // ----------------------------
+    // HELPERS
+    // ----------------------------
+    const fmtDate = (iso) => {
+      // display as M.D.YY like your input, but keep ISO for sorting
+      const d = new Date(iso + "T00:00:00");
+      const m = d.getMonth() + 1;
+      const day = d.getDate();
+      const yy = String(d.getFullYear()).slice(-2);
+      return `${m}.${day}.${yy}`;
+    };
+
+    const parseTimeToSeconds = (timeStr, distance) => {
+      // Handles mm:ss, h:mm:ss
+      // For sorting only. Lower = faster.
+      if (!timeStr) return null;
+      const parts = timeStr.split(":").map(Number);
+      let seconds = 0;
+      if (parts.length === 2) seconds = parts[0] * 60 + parts[1];
+      if (parts.length === 3) seconds = parts[0] * 3600 + parts[1] * 60 + parts[2];
+      return Number.isFinite(seconds) ? seconds : null;
+    };
+
+    const uniq = (arr) => [...new Set(arr)].sort((a,b) => a.localeCompare(b));
+
+    const safeText = (s) => (s || "").toString();
+
+    // ----------------------------
+    // RENDERERS
+    // ----------------------------
+    function renderSimpleTable(containerId, rows, columns) {
+      const container = document.getElementById(containerId);
+      const head = `
+        <thead>
+          <tr>${columns.map(c => `<th>${c.label}</th>`).join("")}</tr>
+        </thead>
+      `;
+      const body = `
+        <tbody>
+          ${rows.map(r => `
+            <tr>
+              ${columns.map(c => `<td>${safeText(r[c.key])}</td>`).join("")}
+            </tr>
+          `).join("")}
+        </tbody>
+      `;
+      container.innerHTML = `<table>${head}${body}</table>`;
+    }
+
+    function renderUpcoming() {
+      const rows = upcoming.map(u => ({
+        distance: u.distance,
+        race: u.race,
+        date: fmtDate(u.date),
+      }));
+      renderSimpleTable("upcomingSection", rows, [
+        { key: "distance", label: "Distance" },
+        { key: "race", label: "Race" },
+        { key: "date", label: "Date" },
+      ]);
+    }
+
+    function renderDeferred() {
+      const rows = deferred.map(d => ({
+        distance: d.distance,
+        race: d.race,
+        date: `${fmtDate(d.date)}${d.notes ? ` (${d.notes})` : ""}`,
+      }));
+      renderSimpleTable("deferredSection", rows, [
+        { key: "distance", label: "Distance" },
+        { key: "race", label: "Race" },
+        { key: "date", label: "Date" },
+      ]);
+    }
+
+    function renderPBs() {
+      const rows = pbs.map(p => ({
+        distance: p.distance,
+        time: p.time,
+        race: p.race,
+        date: fmtDate(p.date),
+      }));
+      renderSimpleTable("pbsSection", rows, [
+        { key: "distance", label: "Distance" },
+        { key: "time", label: "Time" },
+        { key: "race", label: "Race" },
+        { key: "date", label: "Date" },
+      ]);
+    }
+
+    function buildDistanceDropdown() {
+      const distances = uniq(races.map(r => r.distance));
+      const sel = document.getElementById("distanceFilter");
+      distances.forEach(d => {
+        const opt = document.createElement("option");
+        opt.value = d;
+        opt.textContent = d;
+        sel.appendChild(opt);
+      });
+    }
+
+    function renderResultsTable(filtered) {
+      // Group by year (descending)
+      const byYear = {};
+      for (const r of filtered) {
+        byYear[r.year] ||= [];
+        byYear[r.year].push(r);
+      }
+      const years = Object.keys(byYear).map(Number).sort((a,b) => b-a);
+
+      let html = "";
+      for (const y of years) {
+        html += `<h3 style="margin:1.2rem 0 0.2rem;">${y}</h3>`;
+        html += `<table>
+          <thead>
+            <tr>
+              <th>Distance</th>
+              <th>Time</th>
+              <th>Race</th>
+              <th>Date</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${byYear[y].map(r => `
+              <tr>
+                <td>${safeText(r.distance)}</td>
+                <td>${safeText(r.time)}</td>
+                <td>${safeText(r.race)}</td>
+                <td>${fmtDate(r.date)}</td>
+                <td>${safeText(r.notes)}</td>
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>`;
+      }
+
+      document.getElementById("resultsTable").innerHTML = html || "<p class='muted'>No matches.</p>";
+    }
+
+    function applyFiltersAndSort() {
+      const q = document.getElementById("search").value.trim().toLowerCase();
+      const dist = document.getElementById("distanceFilter").value;
+      const sortBy = document.getElementById("sortBy").value;
+
+      let filtered = races.slice();
+
+      if (dist) filtered = filtered.filter(r => r.distance === dist);
+
+      if (q) {
+        filtered = filtered.filter(r => {
+          const hay = `${r.distance} ${r.time} ${r.race} ${r.year} ${r.notes} ${r.date}`.toLowerCase();
+          return hay.includes(q);
+        });
+      }
+
+      // Sort (stable-ish)
+      const sorted = filtered.slice().sort((a, b) => {
+        if (sortBy.startsWith("date")) {
+          const da = a.date, db = b.date;
+          return sortBy === "date-asc" ? da.localeCompare(db) : db.localeCompare(da);
+        }
+        if (sortBy.startsWith("time")) {
+          const ta = parseTimeToSeconds(a.time, a.distance);
+          const tb = parseTimeToSeconds(b.time, b.distance);
+          // Handle nulls (put at bottom)
+          if (ta == null && tb == null) return 0;
+          if (ta == null) return 1;
+          if (tb == null) return -1;
+          return sortBy === "time-asc" ? (ta - tb) : (tb - ta);
+        }
+        return 0;
+      });
+
+      // Keep year grouping correct even after sort: group then within each year keep sorted order
+      // We'll just render in the sorted order but grouped by year in renderResultsTable.
+      renderResultsTable(sorted);
+    }
+
+    function renderMajorsStatus() {
+      // Auto-detect completed majors from race names
+      const done = new Set();
+      for (const r of races) {
+        const name = (r.race || "").toLowerCase();
+        if (name.includes("berlin")) done.add("Berlin");
+        if (name.includes("chicago")) done.add("Chicago");
+        // (NYC, Boston, London, Tokyo, Sydney would auto-appear if those race names show up)
+        if (name.includes("new york") || name.includes("nyc")) done.add("NYC");
+        if (name.includes("boston")) done.add("Boston");
+        if (name.includes("london")) done.add("London");
+        if (name.includes("tokyo")) done.add("Tokyo");
+        if (name.includes("sydney")) done.add("Sydney");
+      }
+
+      const container = document.getElementById("majorsStatus");
+      container.innerHTML = majors.map(m => {
+        const isDone = done.has(m.key);
+        return `
+          <span class="pill ${isDone ? "ok" : "no"}">
+            <span class="dot"></span>
+            ${m.name} ${isDone ? "✅" : "❌"}
+            ${isDone && (m.key === "Berlin") ? " (2025)" : ""}
+            ${isDone && (m.key === "Chicago") ? " (2025)" : ""}
+          </span>
+        `;
+      }).join("");
+    }
+
+    function renderSummary() {
+      // PRs: use your pbs array
+      const prMarathon = pbs.find(p => p.distance === "26.2M")?.time || "—";
+      const prHalf = pbs.find(p => p.distance === "13.1M")?.time || "—";
+      const pr5k = pbs.find(p => p.distance === "5K")?.time || "—";
+
+      // Marathons completed (26.2M results count)
+      const marathonsCompleted = races.filter(r => r.distance === "26.2M").length;
+
+      // Countries raced: infer from race names (lightweight + honest)
+      // We'll do a minimal heuristic: Berlin -> Germany, Chicago/Philly/etc -> USA
+      // If you want this exact, later we can add an explicit country field per race.
+      const countries = new Set();
+      for (const r of races) {
+        const n = (r.race || "").toLowerCase();
+        if (n.includes("berlin")) countries.add("Germany");
+        else countries.add("USA");
+      }
+
+      const stats = [
+        { label: "Marathon PR", value: prMarathon },
+        { label: "Half PR", value: prHalf },
+        { label: "5K PR", value: pr5k },
+        { label: "Marathons completed", value: String(marathonsCompleted) },
+        { label: "Countries raced", value: String(countries.size) },
+      ];
+
+      document.getElementById("stats").innerHTML = stats.map(s => `
+        <div class="stat">
+          <div class="label">${s.label}</div>
+          <div class="value">${s.value}</div>
+        </div>
+      `).join("");
+    }
+
+    // ----------------------------
+    // INIT
+    // ----------------------------
+    renderUpcoming();
+    renderDeferred();
+    renderPBs();
+    renderSummary();
+    renderMajorsStatus();
+    buildDistanceDropdown();
+    applyFiltersAndSort();
+
+    document.getElementById("search").addEventListener("input", applyFiltersAndSort);
+    document.getElementById("distanceFilter").addEventListener("change", applyFiltersAndSort);
+    document.getElementById("sortBy").addEventListener("change", applyFiltersAndSort);
+  </script>
 </body>
 </html>
