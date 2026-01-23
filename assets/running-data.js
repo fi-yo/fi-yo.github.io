@@ -30,7 +30,8 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "21:45",
       race: "Cambridge Spring Classic",
-      date: "2022-05-01"
+      date: "2022-05-01",
+      url: "https://track.rtrt.me/e/TLMR-SPRING-CLASSIC-2022#/tracker/REG3YNUF",
     },
     {
       distance: "5M",
@@ -252,7 +253,7 @@ window.RUNNING_DATA = {
       race: "Cambridge Spring Classic",
       date: "2022-05-01",
       notes: "",
-      url: ""
+      url: "https://track.rtrt.me/e/TLMR-SPRING-CLASSIC-2022#/tracker/REG3YNUF"
     },
     {
       year: 2022,
@@ -261,7 +262,7 @@ window.RUNNING_DATA = {
       race: "Shamrock Half Marathon",
       date: "2022-03-20",
       notes: "",
-      url: ""
+      url: "https://www.athlinks.com/event/3175/results/Event/1003868/Course/2190387/Bib/3969"
     },
     {
       year: 2022,
@@ -281,7 +282,7 @@ window.RUNNING_DATA = {
       race: "Cambridge Winter Classic",
       date: "2021-12-05",
       notes: "",
-      url: ""
+      url: "https://track.rtrt.me/e/TLMR-WINTER-CLASSIC-2021#/dash/R4GNYA76"
     },
     {
       year: 2021,
@@ -299,7 +300,7 @@ window.RUNNING_DATA = {
       race: "USATF-NE XC Championship",
       date: "2021-11-07",
       notes: "",
-      url: ""
+      url: "https://newengland.usatf.org/USATF-New-England/media/USATF-New-England/2021%20results/2021-NE-XC-women.pdf"
     },
     {
       year: 2021,
@@ -308,7 +309,7 @@ window.RUNNING_DATA = {
       race: "Hartford Marathon",
       date: "2021-10-09",
       notes: "",
-      url: ""
+      url: "https://www.athlinks.com/event/1581/results/Event/963401/Course/2127460/Bib/1178"
     },
     {
       year: 2021,
@@ -317,7 +318,7 @@ window.RUNNING_DATA = {
       race: "Lone Gull",
       date: "2021-09-19",
       notes: "",
-      url: ""
+      url: "https://results.raceroster.com/v3/events/s6hpgcnn5zvjqrhc/race/104213?filter_search=fiona"
     },
 
     // ===== 2020 =====
