@@ -495,6 +495,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "27:56",
       race: "Cambridge Spring Classic",
+      location: "Cambridge, MA",
       date: "2018-04-22",
       notes: "",
       url: "https://www.trisignup.com/Race/Results/55292/?customResultsPageId=23359&segmentId=183870&row=1171"
@@ -506,6 +507,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "26:33",
       race: "Cambridge Winter Classic",
+      location: "Cambridge, MA",
       date: "2017-12-03",
       notes: "",
       url: "https://my.racewire.com/athlete/7873242"
@@ -526,6 +528,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "28:33",
       race: "Cambridge Winter Classic",
+      location: "Cambridge, MA",
       date: "2016-12-04",
       notes: "",
       url: "https://my.racewire.com/athlete/7873242"
