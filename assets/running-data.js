@@ -6,7 +6,7 @@ window.RUNNING_DATA = {
   upcoming: [
     {
       distance: "50K",
-      race: "The Cowtown",
+      race: "The Cowtown Ultra Marathon",
       date: "2026-03-01",
       url: "https://cowtownmarathon.org/",
     },
