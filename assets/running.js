@@ -289,6 +289,7 @@
     const pbHalf = data.personalBests?.find((p) => p.distance === "13.1M")?.time || "—";
     const pbMar = data.personalBests?.find((p) => p.distance === "26.2M")?.time || "—";
 
+    const halfMarathonsCompleted = (data.raceResults || []).filter((r) => r.distance === "13.1M").length;
     const marathonsCompleted = (data.raceResults || []).filter((r) => r.distance === "26.2M").length;
 
     // Simple countries heuristic: Berlin => Germany, Manchester City Marathon => UK, else USA.
@@ -309,6 +310,7 @@
       { label: "Half PR", value: pbHalf },
       { label: "5M PR", value: pb5m },
       { label: "5K PR", value: pb5k },
+      { label: "Half nmarathons completed", value: String(halfMarathonsCompleted) },
       { label: "Marathons completed", value: String(marathonsCompleted) },
       { label: "World Majors", value: majorTotal ? `${majorDone} / ${majorTotal}` : "—" },
       { label: "Countries raced", value: String(countries.size) },
