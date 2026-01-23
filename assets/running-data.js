@@ -426,6 +426,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "25:09",
       race: "Cayuga Heights Elementary School",
+      location: "Ithaca, NY",
       date: "2019-05-11",
       notes: "2nd Female",
       url: "https://www.webscorer.com/racedetails?raceid=179942&did=198898&cid=1008888&gender=F"
