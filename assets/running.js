@@ -310,7 +310,7 @@
       { label: "Half PR", value: pbHalf },
       { label: "5M PR", value: pb5m },
       { label: "5K PR", value: pb5k },
-      { label: "Half nmarathons completed", value: String(halfMarathonsCompleted) },
+      { label: "Half marathons completed", value: String(halfMarathonsCompleted) },
       { label: "Marathons completed", value: String(marathonsCompleted) },
       { label: "World Majors", value: majorTotal ? `${majorDone} / ${majorTotal}` : "—" },
       { label: "Countries raced", value: String(countries.size) },
