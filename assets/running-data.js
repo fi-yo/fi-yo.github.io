@@ -7,6 +7,7 @@ window.RUNNING_DATA = {
     {
       distance: "50K",
       race: "The Cowtown Ultra Marathon",
+      location: "Fort Worth, TX",
       date: "2026-03-01",
       url: "https://cowtownmarathon.org/",
     },
