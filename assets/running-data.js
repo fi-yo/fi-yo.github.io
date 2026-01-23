@@ -58,7 +58,8 @@ window.RUNNING_DATA = {
       distance: "13.1M",
       time: "1:44:55",
       race: "Shamrock Half Marathon",
-      date: "2022-03-20"
+      date: "2022-03-20",
+      url: "https://www.athlinks.com/event/3175/results/Event/1003868/Course/2190387/Bib/3969",
     },
     {
       distance: "26.2M",
