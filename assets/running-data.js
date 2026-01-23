@@ -48,7 +48,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "21:45",
       race: "Cambridge Spring Classic",
-      location: "Cambridge, MA".
+      location: "Cambridge, MA",
       date: "2022-05-01",
       url: "https://track.rtrt.me/e/TLMR-SPRING-CLASSIC-2022#/tracker/REG3YNUF",
     },
