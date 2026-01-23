@@ -26,6 +26,7 @@ window.RUNNING_DATA = {
     {
       distance: "26.2M",
       race: "Marine Corps Marathon",
+      location: "Washington, D.C.",
       date: "2026-10-25", 
       url: "https://www.marinemarathon.com/"
     }
@@ -47,6 +48,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "21:45",
       race: "Cambridge Spring Classic",
+      location: "Cambridge, MA".
       date: "2022-05-01",
       url: "https://track.rtrt.me/e/TLMR-SPRING-CLASSIC-2022#/tracker/REG3YNUF",
     },
@@ -60,6 +62,7 @@ window.RUNNING_DATA = {
       distance: "13.1M",
       time: "1:44:55",
       race: "Shamrock Half Marathon",
+      location: "Virginia Beach, VA",
       date: "2022-03-20",
       url: "https://www.athlinks.com/event/3175/results/Event/1003868/Course/2190387/Bib/3969",
     },
@@ -67,6 +70,7 @@ window.RUNNING_DATA = {
       distance: "26.2M",
       time: "3:51:05",
       race: "BoA Chicago Marathon",
+      location: "Chicago, IL",
       date: "2025-10-12"
     }
   ],
@@ -90,6 +94,7 @@ window.RUNNING_DATA = {
       distance: "4M",
       time:"32:19",
       race: "NYRR Midnight Run",
+      location: "New York, NY",
       date: "2025-12-31",
       notes:"",
       url:"https://results.nyrr.org/event/25MID/result/1954",
@@ -100,6 +105,7 @@ window.RUNNING_DATA = {
     distance: "5K",
     time: "22:39",
     race: "Greenwich Alliance Turkey Trot",
+    location: "Greenwich, CT",
     date: "2025-11-29",
     notes: "",
     url: "https://runsignup.com/Race/Results/153039/IndividualResult/YTzS?resultSetId=612691#U29590864"
@@ -110,6 +116,7 @@ window.RUNNING_DATA = {
       distance: "26.2M",
       time: "3:57:05",
       race: "The Elliot Manchester City Marathon",
+      location: "Manchester City, NH",
       date: "2025-11-09",
       notes: "",
       url: "https://results.raceroster.com/v3/events/ny6y9dwbsv7yq2sf/race/246784/participant/pg9heszb2ydwyymc?filter_search=fiona"
@@ -119,6 +126,7 @@ window.RUNNING_DATA = {
       distance: "26.2M",
       time: "3:51:05",
       race: "BoA Chicago Marathon",
+      location: "Chicago, IL",
       date: "2025-10-12",
       notes: "",
       url: "https://results.chicagomarathon.com/2025/?content=detail&fpid=search&pid=search&idp=9TGG96382B95C4&lang=EN_CAP&event=MAR&event_main_group=runner&search%5Bname%5D=young&search%5Bfirstname%5D=fiona&search_event=MAR"
@@ -128,6 +136,7 @@ window.RUNNING_DATA = {
       distance: "26.2M",
       time: "4:13:24",
       race: "BMW Berlin Marathon",
+      location: "Berlin, Germany",
       date: "2025-09-21",
       notes: "",
       url: "https://berlin.r.mikatiming.com/2025/?content=detail&fpid=search&pid=search&idp=HCH3C0OHCD3F5&lang=EN_CAP&event=BML_HCH3C0OH2F2&event_main_group=BMW+BERLIN+MARATHON&search%5Bname%5D=young&search%5Bfirstname%5D=fiona&search_event=BML_HCH3C0OH2F2"
@@ -137,6 +146,7 @@ window.RUNNING_DATA = {
       distance: "1M",
       time: "6:51",
       race: "4th Annual Miami Mile",
+      location: "Miami, FL",
       date: "2025-05-31",
       notes: "",
       url: ""
@@ -146,6 +156,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "24:31",
       race: "Purple Pride 5K",
+      location: "Orlando, FL",
       date: "2025-05-17",
       notes: "2nd AG",
       url: "https://runsignup.com/Race/Results/85151/IndividualResult/TdYd?resultSetId=550800#U29590864"
@@ -155,6 +166,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "23:00",
       race: "Miami Lexus Corporate Run",
+      location: "Miami, FL",
       date: "2025-04-24",
       notes: "",
       url: "https://events.hakuapp.com/?registration_number=B7794A765918"
