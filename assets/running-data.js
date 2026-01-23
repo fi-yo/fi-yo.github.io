@@ -13,7 +13,8 @@ window.RUNNING_DATA = {
     {
       distance: "26.2M",
       race: "Marine Corps Marathon",
-      date: "2026-10-25"
+      date: "2026-10-25", 
+      url: "https://www.marinemarathon.com/"
     }
   ],
 
