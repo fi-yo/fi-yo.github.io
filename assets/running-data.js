@@ -61,14 +61,19 @@ window.RUNNING_DATA = {
       distance: "RELAY",
       time: "",
       race: "U.S. Polo Assn. Palm Beaches Marathon Relay",
-      date: "2025-12-14"
+      date: "2025-12-14",
       notes:"",
       url:"",
     },
+  
     {
+      year: 2025,
       distance: "4M",
+      time:"",
       race: "NYRR Midnight Run",
-      date: "2025-12-31"
+      date: "2025-12-31",
+      notes:"",
+      url:"",
     },
     
       {
