@@ -165,7 +165,7 @@ window.RUNNING_DATA = {
       race: "Miami Runway 5K",
       date: "2024-10-19",
       notes: "2nd AG",
-      url: ""
+      url: "https://www.athlinks.com/event/330940/results/Event/1093718/Course/2526962/Bib/2298"
     },
     {
       year: 2024,
@@ -174,7 +174,7 @@ window.RUNNING_DATA = {
       race: "26x1 Mile Club Challenge Relay Invitational",
       date: "2024-06-08",
       notes: "",
-      url: ""
+      url: "https://www.srr.org/26x12024fullresults"
     },
     {
       year: 2024,
@@ -183,7 +183,7 @@ window.RUNNING_DATA = {
       race: "Run & Walk with Pride",
       date: "2024-06-02",
       notes: "",
-      url: ""
+      url: "https://runsignup.com/Race/Results/129243/IndividualResult/gbtG?resultSetId=462506#U29590864"
     },
     {
       year: 2024,
@@ -192,7 +192,7 @@ window.RUNNING_DATA = {
       race: "Soul Ryeders Half Marathon",
       date: "2024-05-19",
       notes: "",
-      url: ""
+      url: "https://www.zippy-reg.com/results/live/athlete/index.php?eid=169&bib=670"
     },
     {
       year: 2024,
