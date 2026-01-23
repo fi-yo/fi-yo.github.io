@@ -176,6 +176,7 @@ window.RUNNING_DATA = {
       distance: "13.1M",
       time: "1:48:50",
       race: "Doral Half Marathon",
+      location: "Doral, FL",
       date: "2025-04-13",
       notes: "2nd AG",
       url: "https://events.hakuapp.com/?registration_number=FFC96EFF52"
@@ -187,6 +188,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "22:43",
       race: "Greenwich Alliance Turkey Trot",
+      location: "Greenwich, CT",
       date: "2024-11-30",
       notes: "",
       url: "https://runsignup.com/Race/Results/153039/FinishersCert?resultSetId=514676&resultId=161427380#certificate"
@@ -196,6 +198,7 @@ window.RUNNING_DATA = {
       distance: "26.2M",
       time: "4:01:12",
       race: "AACR Philadelphia Marathon",
+      location: "Philadelphia, PA",
       date: "2024-11-24",
       notes: "",
       url: "https://www.mychiptime.com/searchevent.php?id=16165"
@@ -205,6 +208,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "23:48",
       race: "Miami Runway 5K",
+      location: "Miami, FL",
       date: "2024-10-19",
       notes: "2nd AG",
       url: "https://www.athlinks.com/event/330940/results/Event/1093718/Course/2526962/Bib/2298"
@@ -261,6 +265,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "25:14",
       race: "Greenwich Alliance Turkey Trot",
+      location: "Greenwich, CT",
       date: "2023-11-25",
       notes: "",
       url: "https://runsignup.com/Race/Results/153039/IndividualResult/gtSJ?resultSetId=426798#U29590864"
@@ -281,6 +286,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "21:45",
       race: "Cambridge Spring Classic",
+      location: "Cambridge, MA",
       date: "2022-05-01",
       notes: "",
       url: "https://track.rtrt.me/e/TLMR-SPRING-CLASSIC-2022#/tracker/REG3YNUF"
@@ -290,6 +296,7 @@ window.RUNNING_DATA = {
       distance: "13.1M",
       time: "1:44:55",
       race: "Shamrock Half Marathon",
+      location: "Virginia Beach, VA",
       date: "2022-03-20",
       notes: "",
       url: "https://www.athlinks.com/event/3175/results/Event/1003868/Course/2190387/Bib/3969"
@@ -310,6 +317,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "22:56",
       race: "Cambridge Winter Classic",
+      location: "Cambridge, MA",
       date: "2021-12-05",
       notes: "",
       url: "https://track.rtrt.me/e/TLMR-WINTER-CLASSIC-2021#/dash/R4GNYA76"
@@ -319,6 +327,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "24:06",
       race: "Greenwich Alliance Turkey Trot",
+      location: "Greenwich, CT",
       date: "2021-11-27",
       notes: "3rd AG",
       url: ""
@@ -337,6 +346,7 @@ window.RUNNING_DATA = {
       distance: "26.2M",
       time: "4:26:46",
       race: "Hartford Marathon",
+      location: "Hartford, CT",
       date: "2021-10-09",
       notes: "",
       url: "https://www.athlinks.com/event/1581/results/Event/963401/Course/2127460/Bib/1178"
@@ -346,6 +356,7 @@ window.RUNNING_DATA = {
       distance: "10K",
       time: "53:52",
       race: "Lone Gull",
+      location: "Gloucester, MA",
       date: "2021-09-19",
       notes: "",
       url: "https://results.raceroster.com/v3/events/s6hpgcnn5zvjqrhc/race/104213?filter_search=fiona"
