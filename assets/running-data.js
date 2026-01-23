@@ -65,15 +65,16 @@ window.RUNNING_DATA = {
   raceResults: [
 
     // ===== 2025 =====
-    {
-      year: 2025,
-      distance: "5K",
-      time: "22:39",
-      race: "Greenwich Alliance Turkey Trot",
-      date: "2025-11-29",
-      notes: "",
-      url: "https://www.google.com/url?q=https%3A%2F%2Frunsignup.com%2FRace%2FResults%2F153039%2FIndividualResult%2FYTzS%3FresultSetId%3D612691%23U29590864&sa=D"
-    },
+      {
+    year: 2025,
+    distance: "5K",
+    time: "22:39",
+    race: "Greenwich Alliance Turkey Trot",
+    date: "2025-11-29",
+    notes: "",
+    url: "https://runsignup.com/Race/Results/153039/IndividualResult/YTzS?resultSetId=612691#U29590864"
+  },
+
     {
       year: 2025,
       distance: "26.2M",
