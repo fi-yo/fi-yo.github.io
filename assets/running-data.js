@@ -404,7 +404,7 @@ window.RUNNING_DATA = {
       race: "38th Annual Skunk Cabbage Classic",
       date: "2019-04-07",
       notes: "",
-      url: ""
+      url: "https://www.leonetiming.com/results/runner.php?id=2214490&tpl=results-gun-only.tpl"
     },
     {
       year: 2019,
@@ -413,7 +413,7 @@ window.RUNNING_DATA = {
       race: "Lake Effect Half Marathon",
       date: "2019-02-24",
       notes: "3rd AG",
-      url: ""
+      url: "https://www.lakeeffecthalfmarathon.com/Race/Results/23976/IndividualResult/tkNd?resultSetId=145337#U29590864"
     },
 
     // ===== 2018 =====
@@ -442,7 +442,7 @@ window.RUNNING_DATA = {
       race: "Cambridge Spring Classic",
       date: "2018-04-22",
       notes: "",
-      url: ""
+      url: "https://www.trisignup.com/Race/Results/55292/?customResultsPageId=23359&segmentId=183870&row=1171"
     },
 
     // ===== 2017 =====
@@ -453,7 +453,7 @@ window.RUNNING_DATA = {
       race: "Cambridge Winter Classic",
       date: "2017-12-03",
       notes: "",
-      url: ""
+      url: "https://my.racewire.com/athlete/7873242"
     },
     {
       year: 2017,
@@ -462,7 +462,7 @@ window.RUNNING_DATA = {
       race: "Brian Honan Road Race",
       date: "2017-09-24",
       notes: "",
-      url: ""
+      url: "https://my.racewire.com/athlete/7873242"
     },
 
     // ===== 2016 =====
@@ -473,7 +473,7 @@ window.RUNNING_DATA = {
       race: "Cambridge Winter Classic",
       date: "2016-12-04",
       notes: "",
-      url: ""
+      url: "https://my.racewire.com/athlete/7873242"
     },
 
     // ===== 2011 =====
@@ -484,7 +484,7 @@ window.RUNNING_DATA = {
       race: "FCIAC XC Championships",
       date: "2011-10-24",
       notes: "",
-      url: ""
+      url: "https://ct.milesplit.com/meets/104326-fciac-xc-championships-2011/results/183132/raw"
     },
 
     // ===== 2010 =====
@@ -495,7 +495,7 @@ window.RUNNING_DATA = {
       race: "FCIAC XC Championships",
       date: "2010-10-21",
       notes: "",
-      url: ""
+      url: "https://ct.milesplit.com/meets/81089-fciac-xc-championships-2010/results/139865"
     }
   ],
 
