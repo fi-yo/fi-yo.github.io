@@ -74,22 +74,22 @@ window.RUNNING_DATA = {
 
     {
       year: 2025,
-      distance: "RELAY",
-      time: "",
+      distance: "8.4M leg in relay",
+      time: "1:14:29",
       race: "U.S. Polo Assn. Palm Beaches Marathon Relay",
       date: "2025-12-14",
       notes:"",
-      url:"",
+      url:"https://accuchip.racetecresults.com/myresults.aspx?uid=16337-6718-3-608569",
     },
   
     {
       year: 2025,
       distance: "4M",
-      time:"",
+      time:"32:19",
       race: "NYRR Midnight Run",
       date: "2025-12-31",
       notes:"",
-      url:"",
+      url:"https://results.nyrr.org/event/25MID/result/1954",
     },
     
       {
