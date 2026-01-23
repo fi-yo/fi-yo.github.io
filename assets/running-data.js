@@ -329,7 +329,7 @@ window.RUNNING_DATA = {
       race: "Lake Effect Half Marathon",
       date: "2020-02-23",
       notes: "",
-      url: ""
+      url: "https://www.lakeeffecthalfmarathon.com/Race/Results/23976/IndividualResult/fxhQ?resultSetId=189764#U29590864"
     },
 
     // ===== 2019 =====
@@ -349,7 +349,7 @@ window.RUNNING_DATA = {
       race: "PGXC Race 2",
       date: "2019-09-22",
       notes: "",
-      url: ""
+      url: "https://runsignup.com/Race/Results/24038/IndividualResult/CcCc?resultSetId=171622#U29590864"
     },
     {
       year: 2019,
@@ -358,7 +358,7 @@ window.RUNNING_DATA = {
       race: "45th Annual Ithaca 5 & 10",
       date: "2019-09-15",
       notes: "",
-      url: ""
+      url: "https://www.leonetiming.com/results/runner.php?id=2284476&tpl=results-gun-only.tpl"
     },
     {
       year: 2019,
@@ -367,7 +367,7 @@ window.RUNNING_DATA = {
       race: "Ithaca Tompkins Regional Airport Runway 5K",
       date: "2019-09-14",
       notes: "",
-      url: ""
+      url: "https://www.leonetiming.com/results/runner.php?id=2284122&tpl=results-gun-only.tpl"
     },
     {
       year: 2019,
@@ -376,7 +376,7 @@ window.RUNNING_DATA = {
       race: "Park City 5K and 5 Mile Road Race",
       date: "2019-05-26",
       notes: "10th Female",
-      url: ""
+      url: "https://www.iresultslive.com/results/?op=individual&racename=5Mile&eid=4241&bib=604"
     },
     {
       year: 2019,
@@ -385,7 +385,7 @@ window.RUNNING_DATA = {
       race: "Cayuga Heights Elementary School",
       date: "2019-05-11",
       notes: "2nd Female",
-      url: ""
+      url: "https://www.webscorer.com/racedetails?raceid=179942&did=198898&cid=1008888&gender=F"
     },
     {
       year: 2019,
