@@ -517,30 +517,32 @@ window.RUNNING_DATA = {
   ],
 
   wishlist: {
-    majors: [
-      { name: "Tokyo", completed: false },
-      { name: "Boston", completed: false },
-      { name: "London", completed: false },
-      { name: "Sydney", completed: false },
-      { name: "Berlin", completed: true, year: 2025 },
-      { name: "Chicago", completed: true, year: 2025 },
-      { name: "NYC", completed: false }
-    ],
-    other: [
-      "Big Sur International Marathon",
-      "San Francisco Marathon",
-      "Baystate Marathon",
-      "Martha's Vineyard Marathon",
-      "Wineglass Marathon",
-      "Cambridge Half Marathon",
-      "RBC Brooklyn Half",
-      "Abbott Dash to the Finish Line",
-      "Oahu Pentathlon",
-      "Athens Marathon",
-      "Poznan Marathon",
-      "Spar Budapest Marathon"
-    ]
-  }
+  majors: [
+    { name: "Tokyo", completed: false, url: "https://www.marathon.tokyo/en/" },
+    { name: "Boston", completed: false, url: "https://www.baa.org/races/boston-marathon" },
+    { name: "London", completed: false, url: "https://www.tcslondonmarathon.com/" },
+    { name: "Sydney", completed: false, url: "https://sydneymarathon.com/" },
+    { name: "Berlin", completed: true, year: 2025, url: "https://www.bmw-berlin-marathon.com/en/" },
+    { name: "Chicago", completed: true, year: 2025, url: "https://www.chicagomarathon.com/" },
+    { name: "NYC", completed: false, url: "https://www.nyrr.org/tcsnycmarathon" }
+  ],
+
+  other: [
+    { name: "Big Sur International Marathon", url: "https://www.bsim.org/" },
+    { name: "San Francisco Marathon", url: "https://www.thesfmarathon.com/" },
+    { name: "Baystate Marathon", url: "https://www.baystatemarathon.com/" },
+    { name: "Martha's Vineyard Marathon", url: "" },
+    { name: "Wineglass Marathon", url: "https://www.wineglassmarathon.com/" },
+    { name: "Cambridge Half Marathon", url: "" },
+    { name: "RBC Brooklyn Half", url: "https://www.nyrr.org/races/rbcbrooklynhalf" },
+    { name: "Abbott Dash to the Finish Line", url: "https://www.nyrr.org/races/abbottdashtothefinishline5k" },
+    { name: "Oahu Pentathlon", url: "" },
+    { name: "Athens Marathon", url: "https://www.athensauthenticmarathon.gr/site/" },
+    { name: "Poznan Marathon", url: "https://www.poznanmaraton.pl/" },
+    { name: "Spar Budapest Marathon", url: "https://www.budapestmarathon.com/en/" }
+  ]
+}
+
 
 };
 
