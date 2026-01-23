@@ -14,12 +14,14 @@ window.RUNNING_DATA = {
     {
       distance: "13.1M",
       race: "United Airlines NYC Half",
+      location: "New York, NY",
       date: "2026-03-15",
       url: "https://events.nyrr.org/united-airlines-nyc-half?_gl=1*1mwq23t*_gcl_au*MTQwMzEzOTU2NC4xNzYzNjc3MDc2",
     },
     {
       distance: "13.1M",
       race: "RBC Brooklyn Half",
+      location: "New York, NY",
       date: "2026-05-16",
       url: "https://events.nyrr.org/rbc-brooklyn-half?_gl=1*1mwq23t*_gcl_au*MTQwMzEzOTU2NC4xNzYzNjc3MDc2",
     },
@@ -84,6 +86,7 @@ window.RUNNING_DATA = {
       distance: "8.4M leg in relay",
       time: "1:14:29",
       race: "U.S. Polo Assn. Palm Beaches Marathon Relay",
+      location: "West Palm Beach, FL",
       date: "2025-12-14",
       notes:"",
       url:"https://accuchip.racetecresults.com/myresults.aspx?uid=16337-6718-3-608569",
@@ -218,6 +221,7 @@ window.RUNNING_DATA = {
       distance: "1M",
       time: "6:36",
       race: "26x1 Mile Club Challenge Relay Invitational",
+      location: "Medford, MA",
       date: "2024-06-08",
       notes: "",
       url: "https://www.srr.org/26x12024fullresults"
@@ -247,7 +251,7 @@ window.RUNNING_DATA = {
       distance: "13.1M",
       time: "1:53:51",
       race: "Queens Spring Half",
-      location: "New York City, NY",
+      location: "New York, NY",
       date: "2024-03-30",
       notes: "1st AG",
       url: "https://my.raceresult.com/283681/"
@@ -259,7 +263,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "24:45",
       race: "The Queens New Year's Eve 5K",
-      location: "New York City, NY",
+      location: "New York, NY",
       date: "2023-12-31",
       notes: "1st AG",
       url: "https://elitefeats.com/res-det.asp?ID=23422&BibID=49"
