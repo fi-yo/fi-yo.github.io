@@ -243,6 +243,53 @@
     renderResultsGrouped(filtered);
   }
 
+  function renderWishlist(data) {
+  const majorsEl = $("majorsStatus");
+  if (majorsEl) {
+    const majors = (data.wishlist?.majors || []).map((m) => {
+      const completed = !!m.completed;
+      const year = m.year ? ` ${m.year}` : "";
+
+      const nameHtml = m.url
+        ? `<a href="${m.url}" target="_blank" rel="noopener">${safeText(m.name)}</a>`
+        : safeText(m.name);
+
+      return `
+        <span class="pill ${completed ? "ok" : "no"}">
+          <span class="dot"></span>
+          ${nameHtml} ${completed ? "✅" : "❌"}${year}
+        </span>
+      `;
+    });
+
+    majorsEl.innerHTML = majors.join("") || `<p class="muted">No majors listed.</p>`;
+  }
+
+  const otherEl = $("wishlistOther");
+  if (otherEl) {
+    const items = data.wishlist?.other || [];
+
+    otherEl.innerHTML =
+      items
+        .map((it) => {
+          // support both formats:
+          // 1) "Big Sur International Marathon"
+          // 2) { name: "...", url: "..." }
+          if (typeof it === "string") return `<li>${safeText(it)}</li>`;
+
+          const name = safeText(it.name);
+          const url = safeText(it.url);
+          const html = url
+            ? `<a href="${url}" target="_blank" rel="noopener">${name}</a>`
+            : name;
+
+          return `<li>${html}</li>`;
+        })
+        .join("") || `<li class="muted">No wishlist races listed.</li>`;
+  }
+}
+
+  
   function init() {
     const data = window.RUNNING_DATA;
     if (!data) return console.error("RUNNING_DATA missing");
