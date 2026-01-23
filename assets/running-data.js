@@ -127,7 +127,7 @@ window.RUNNING_DATA = {
       race: "Miami Lexus Corporate Run",
       date: "2025-04-24",
       notes: "",
-      url: ""
+      url: "https://events.hakuapp.com/?registration_number=B7794A765918"
     },
     {
       year: 2025,
@@ -136,7 +136,7 @@ window.RUNNING_DATA = {
       race: "Doral Half Marathon",
       date: "2025-04-13",
       notes: "2nd AG",
-      url: ""
+      url: "https://events.hakuapp.com/?registration_number=FFC96EFF52"
     },
 
     // ===== 2024 =====
@@ -147,7 +147,7 @@ window.RUNNING_DATA = {
       race: "Greenwich Alliance Turkey Trot",
       date: "2024-11-30",
       notes: "",
-      url: ""
+      url: "https://runsignup.com/Race/Results/153039/FinishersCert?resultSetId=514676&resultId=161427380#certificate"
     },
     {
       year: 2024,
@@ -156,7 +156,7 @@ window.RUNNING_DATA = {
       race: "AACR Philadelphia Marathon",
       date: "2024-11-24",
       notes: "",
-      url: ""
+      url: "https://www.mychiptime.com/searchevent.php?id=16165"
     },
     {
       year: 2024,
