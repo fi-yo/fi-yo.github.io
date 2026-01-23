@@ -82,7 +82,7 @@ window.RUNNING_DATA = {
       race: "The Elliot Manchester City Marathon",
       date: "2025-11-09",
       notes: "",
-      url: ""
+      url: "https://results.raceroster.com/v3/events/ny6y9dwbsv7yq2sf/race/246784/participant/pg9heszb2ydwyymc?filter_search=fiona"
     },
     {
       year: 2025,
@@ -91,7 +91,7 @@ window.RUNNING_DATA = {
       race: "BoA Chicago Marathon",
       date: "2025-10-12",
       notes: "",
-      url: ""
+      url: "https://results.chicagomarathon.com/2025/?content=detail&fpid=search&pid=search&idp=9TGG96382B95C4&lang=EN_CAP&event=MAR&event_main_group=runner&search%5Bname%5D=young&search%5Bfirstname%5D=fiona&search_event=MAR"
     },
     {
       year: 2025,
@@ -100,7 +100,7 @@ window.RUNNING_DATA = {
       race: "BMW Berlin Marathon",
       date: "2025-09-21",
       notes: "",
-      url: ""
+      url: "https://berlin.r.mikatiming.com/2025/?content=detail&fpid=search&pid=search&idp=HCH3C0OHCD3F5&lang=EN_CAP&event=BML_HCH3C0OH2F2&event_main_group=BMW+BERLIN+MARATHON&search%5Bname%5D=young&search%5Bfirstname%5D=fiona&search_event=BML_HCH3C0OH2F2"
     },
     {
       year: 2025,
@@ -118,7 +118,7 @@ window.RUNNING_DATA = {
       race: "Purple Pride 5K",
       date: "2025-05-17",
       notes: "2nd AG",
-      url: ""
+      url: "https://runsignup.com/Race/Results/85151/IndividualResult/TdYd?resultSetId=550800#U29590864"
     },
     {
       year: 2025,
