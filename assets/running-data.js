@@ -11,6 +11,12 @@ window.RUNNING_DATA = {
       url: "https://cowtownmarathon.org/",
     },
     {
+      distance: "13.1M",
+      race: "United Airlines NYC Half",
+      date: "2026-03-15",
+      url: "https://events.nyrr.org/united-airlines-nyc-half?_gl=1*1mwq23t*_gcl_au*MTQwMzEzOTU2NC4xNzYzNjc3MDc2",
+    },
+    {
       distance: "26.2M",
       race: "Marine Corps Marathon",
       date: "2026-10-25", 
