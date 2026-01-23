@@ -21,7 +21,8 @@ window.RUNNING_DATA = {
       distance: "26.2M",
       race: "California International Marathon",
       date: "2025-12-07",
-      notes: "running in 2026"
+      notes: "running in 2026", 
+      url: "https://runsra.org/california-international-marathon/"
     }
   ],
 
