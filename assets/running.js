@@ -97,6 +97,7 @@
       distance: d.distance,
       race: d.race,
       date: d.date,
+      location: d.location,
       notes: d.notes || "",
       url: d.url || "",
     }));
