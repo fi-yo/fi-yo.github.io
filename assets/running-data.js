@@ -435,6 +435,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "25:12",
       race: "Belle Sherman 5K & Fun Run",
+      location: "Ithaca, NY",
       date: "2019-04-27",
       notes: "",
       url: ""
@@ -444,6 +445,7 @@ window.RUNNING_DATA = {
       distance: "13.1M",
       time: "2:05:04",
       race: "38th Annual Skunk Cabbage Classic",
+      location: "Ithaca, NY",
       date: "2019-04-07",
       notes: "",
       url: "https://www.leonetiming.com/results/runner.php?id=2214490&tpl=results-gun-only.tpl"
@@ -465,6 +467,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "26:40",
       race: "Dryden Rotary Fall Dash",
+      location: "Dryden, NY",
       date: "2018-10-20",
       notes: "",
       url: ""
@@ -474,6 +477,7 @@ window.RUNNING_DATA = {
       distance: "10K Trail",
       time: "1:19:44",
       race: "Danby Down & Dirty",
+      location: "Danby, NY",
       date: "2018-10-06",
       notes: "",
       url: ""
