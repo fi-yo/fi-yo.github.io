@@ -227,6 +227,7 @@ window.RUNNING_DATA = {
       distance: "8K",
       time: "37:51",
       race: "Run & Walk with Pride",
+      location: "Seattle, WA",
       date: "2024-06-02",
       notes: "",
       url: "https://runsignup.com/Race/Results/129243/IndividualResult/gbtG?resultSetId=462506#U29590864"
@@ -236,6 +237,7 @@ window.RUNNING_DATA = {
       distance: "13.1M",
       time: "1:50:52",
       race: "Soul Ryeders Half Marathon",
+      location: "Rye, NY",
       date: "2024-05-19",
       notes: "",
       url: "https://www.zippy-reg.com/results/live/athlete/index.php?eid=169&bib=670"
@@ -245,6 +247,7 @@ window.RUNNING_DATA = {
       distance: "13.1M",
       time: "1:53:51",
       race: "Queens Spring Half",
+      location: "New York City, NY",
       date: "2024-03-30",
       notes: "1st AG",
       url: "https://my.raceresult.com/283681/"
@@ -256,6 +259,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "24:45",
       race: "The Queens New Year's Eve 5K",
+      location: "New York City, NY",
       date: "2023-12-31",
       notes: "1st AG",
       url: "https://elitefeats.com/res-det.asp?ID=23422&BibID=49"
