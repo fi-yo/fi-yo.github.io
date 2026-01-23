@@ -201,7 +201,7 @@ window.RUNNING_DATA = {
       race: "Queens Spring Half",
       date: "2024-03-30",
       notes: "1st AG",
-      url: ""
+      url: "https://my.raceresult.com/283681/"
     },
 
     // ===== 2023 =====
@@ -212,7 +212,7 @@ window.RUNNING_DATA = {
       race: "The Queens New Year's Eve 5K",
       date: "2023-12-31",
       notes: "1st AG",
-      url: ""
+      url: "https://elitefeats.com/res-det.asp?ID=23422&BibID=49"
     },
     {
       year: 2023,
@@ -221,7 +221,7 @@ window.RUNNING_DATA = {
       race: "Greenwich Alliance Turkey Trot",
       date: "2023-11-25",
       notes: "",
-      url: ""
+      url: "https://runsignup.com/Race/Results/153039/IndividualResult/gtSJ?resultSetId=426798#U29590864"
     },
     {
       year: 2023,
@@ -230,7 +230,7 @@ window.RUNNING_DATA = {
       race: "Super Sunday",
       date: "2023-02-12",
       notes: "",
-      url: ""
+      url: "https://my.raceresult.com/233423/"
     },
 
     // ===== 2022 =====
