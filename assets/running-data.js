@@ -337,6 +337,7 @@ window.RUNNING_DATA = {
       distance: "6K XC",
       time: "30:42",
       race: "USATF-NE XC Championship",
+      location: "Boston, MA",
       date: "2021-11-07",
       notes: "",
       url: "https://newengland.usatf.org/USATF-New-England/media/USATF-New-England/2021%20results/2021-NE-XC-women.pdf"
@@ -368,6 +369,7 @@ window.RUNNING_DATA = {
       distance: "13.1M",
       time: "1:58:48",
       race: "Lake Effect Half Marathon",
+      location: "Syracuse, NY",
       date: "2020-02-23",
       notes: "",
       url: "https://www.lakeeffecthalfmarathon.com/Race/Results/23976/IndividualResult/fxhQ?resultSetId=189764#U29590864"
@@ -451,6 +453,7 @@ window.RUNNING_DATA = {
       distance: "13.1M",
       time: "2:01:03",
       race: "Lake Effect Half Marathon",
+      location: "Syracuse, NY",
       date: "2019-02-24",
       notes: "3rd AG",
       url: "https://www.lakeeffecthalfmarathon.com/Race/Results/23976/IndividualResult/tkNd?resultSetId=145337#U29590864"
