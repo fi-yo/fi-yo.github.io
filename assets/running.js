@@ -97,7 +97,7 @@
       distance: d.distance,
       race: d.race,
       date: d.date,
-      location: d.location,
+      location: d.location || "",
       notes: d.notes || "",
       url: d.url || "",
     }));
@@ -114,6 +114,7 @@
               ? `<a href="${r.url}" target="_blank" rel="noopener">${safeText(r.race)}</a>`
               : safeText(r.race),
         },
+        { key: "location", label: "Location" },
         {
           key: "date",
           label: "Date",
@@ -294,7 +295,6 @@
     const marathonsCompleted = (data.raceResults || []).filter((r) => r.distance === "26.2M").length;
 
     // Simple countries heuristic: Berlin => Germany, Manchester City Marathon => UK, else USA.
-    // If you want exact, we can add a `country` field per race later.
     const countries = new Set();
     for (const r of data.raceResults || []) {
       const n = (r.race || "").toLowerCase();
