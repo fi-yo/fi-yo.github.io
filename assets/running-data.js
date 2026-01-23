@@ -381,6 +381,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "21:41",
       race: "Greenwich Alliance Turkey Trot",
+      location: "Greenwich, CT",
       date: "2019-11-30",
       notes: "3rd AG (not quite)",
       url: ""
@@ -399,6 +400,7 @@ window.RUNNING_DATA = {
       distance: "10K",
       time: "52:33",
       race: "45th Annual Ithaca 5 & 10",
+      location: "Ithaca, NY",
       date: "2019-09-15",
       notes: "",
       url: "https://www.leonetiming.com/results/runner.php?id=2284476&tpl=results-gun-only.tpl"
@@ -408,6 +410,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "24:20",
       race: "Ithaca Tompkins Regional Airport Runway 5K",
+      location: "Ithaca, NY",
       date: "2019-09-14",
       notes: "",
       url: "https://www.leonetiming.com/results/runner.php?id=2284122&tpl=results-gun-only.tpl"
