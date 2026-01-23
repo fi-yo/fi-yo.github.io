@@ -5,16 +5,6 @@ window.RUNNING_DATA = {
 
   upcoming: [
     {
-      distance: "RELAY",
-      race: "U.S. Polo Assn. Palm Beaches Marathon Relay",
-      date: "2025-12-14"
-    },
-    {
-      distance: "4M",
-      race: "NYRR Midnight Run",
-      date: "2025-12-31"
-    },
-    {
       distance: "50K",
       race: "The Cowtown",
       date: "2026-03-01"
@@ -65,6 +55,22 @@ window.RUNNING_DATA = {
   raceResults: [
 
     // ===== 2025 =====
+
+    {
+      year: 2025,
+      distance: "RELAY",
+      time: "",
+      race: "U.S. Polo Assn. Palm Beaches Marathon Relay",
+      date: "2025-12-14"
+      notes:"",
+      url:"",
+    },
+    {
+      distance: "4M",
+      race: "NYRR Midnight Run",
+      date: "2025-12-31"
+    },
+    
       {
     year: 2025,
     distance: "5K",
