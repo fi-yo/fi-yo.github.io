@@ -517,6 +517,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "29:35",
       race: "Brian Honan Road Race",
+      location: "Boston, MA",
       date: "2017-09-24",
       notes: "",
       url: "https://my.racewire.com/athlete/7873242"
@@ -540,6 +541,7 @@ window.RUNNING_DATA = {
       distance: "4K XC",
       time: "20:17",
       race: "FCIAC XC Championships",
+      location: "New Canaan, CT",
       date: "2011-10-24",
       notes: "",
       url: "https://ct.milesplit.com/meets/104326-fciac-xc-championships-2011/results/183132/raw"
@@ -551,6 +553,7 @@ window.RUNNING_DATA = {
       distance: "2.5K XC",
       time: "11:45",
       race: "FCIAC XC Championships",
+      location: "New Canaan, CT",
       date: "2010-10-21",
       notes: "",
       url: "https://ct.milesplit.com/meets/81089-fciac-xc-championships-2010/results/139865"
