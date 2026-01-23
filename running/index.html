@@ -3,34 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <nav class="nav">
-  <a class="brand" href="/">Fiona Young</a>
-  <div class="navlinks">
-    <a href="/running/">Running</a>
-    <a href="/projects/">Projects</a>
-    <a href="/writing/">Writing</a>
-    <a href="/about/">About</a>
-    <a href="/contact/">Contact</a>
-  </div>
-</nav>
-
-
   <title>Running | Fiona Young</title>
+
   <style>
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       max-width: 900px;
-      margin: 4rem auto;
+      margin: 0 auto;
       padding: 0 1.2rem;
       line-height: 1.6;
       color: #111;
     }
-    a { color: #2563eb; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    h1 { font-size: 2.4rem; margin-bottom: 0.25rem; }
-    h2 { margin-top: 2.5rem; }
-    .muted { color: #555; }
+
+    /* Navbar */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid #e5e7eb;
+      margin-bottom: 2.5rem;
+    }
+    .brand {
+      font-weight: 700;
+      color: #111;
+      text-decoration: none;
+    }
+    .navlinks a {
+      margin-left: 1rem;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .navlinks a:hover { text-decoration: underline; }
+
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      margin-top: 2.5rem;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 0.3rem;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -40,93 +56,120 @@
     th, td {
       text-align: left;
       border-bottom: 1px solid #e5e7eb;
-      padding: 0.6rem 0.4rem;
+      padding: 0.5rem 0.4rem;
       vertical-align: top;
     }
     th {
       font-weight: 650;
       white-space: nowrap;
     }
-    .topnav {
-      margin-bottom: 1.5rem;
-    }
+
     .note {
-      margin-top: 1.5rem;
-      font-size: 0.9rem;
+      margin: 2rem 0;
+      font-size: 0.95rem;
       color: #555;
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+      .navlinks a {
+        margin-left: 0;
+        margin-right: 1rem;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="topnav">
-    <a href="/">← Home</a>
-  </div>
+  <nav class="nav">
+    <a class="brand" href="/">Fiona Young</a>
+    <div class="navlinks">
+      <a href="/running/">Running</a>
+      <a href="/projects/">Projects</a>
+      <a href="/writing/">Writing</a>
+      <a href="/about/">About</a>
+    </div>
+  </nav>
 
   <h1>Running</h1>
-  <p class="muted">
-    Upcoming races and recent history.
-  </p>
+  <p>Race results (chip time).</p>
 
-  <h2>Upcoming races</h2>
+  <h2>2025</h2>
   <table>
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Race</th>
-        <th>Distance</th>
-        <th>Location</th>
-        <th>Notes</th>
-      </tr>
-    </thead>
     <tbody>
-      <tr>
-        <td>2026-04-19</td>
-        <td>Boston Marathon</td>
-        <td>Marathon</td>
-        <td>Boston, MA</td>
-        <td>Goal: strong negative split</td>
-      </tr>
-      <tr>
-        <td>2026-06-07</td>
-        <td>Brooklyn Half</td>
-        <td>Half marathon</td>
-        <td>Brooklyn, NY</td>
-        <td>Training race</td>
-      </tr>
+      <tr><td>5K</td><td>22:39</td><td>Greenwich Alliance Turkey Trot</td><td>11.29.25</td></tr>
+      <tr><td>26.2M</td><td>3:57:05</td><td>The Elliot Manchester City Marathon</td><td>11.9.25</td></tr>
+      <tr><td>26.2M</td><td>3:51:05</td><td>BoA Chicago Marathon</td><td>10.12.25</td></tr>
+      <tr><td>26.2M</td><td>4:13:24</td><td>BMW Berlin Marathon</td><td>9.21.25</td></tr>
+      <tr><td>1M</td><td>6:51</td><td>4th Annual Miami Mile</td><td>5.31.25</td></tr>
+      <tr><td>5K</td><td>24:31</td><td>Purple Pride 5K (2nd AG)</td><td>5.17.25</td></tr>
+      <tr><td>5K</td><td>23:00</td><td>Miami Lexus Corporate Run</td><td>4.24.25</td></tr>
+      <tr><td>13.1M</td><td>1:48:50</td><td>Doral Half Marathon (2nd AG)</td><td>4.13.25</td></tr>
     </tbody>
   </table>
 
-  <h2>Recent races</h2>
+  <h2>2024</h2>
   <table>
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Race</th>
-        <th>Distance</th>
-        <th>Result</th>
-        <th>Notes</th>
-      </tr>
-    </thead>
     <tbody>
-      <tr>
-        <td>2025-10-12</td>
-        <td>Chicago Marathon</td>
-        <td>Marathon</td>
-        <td>3:38:xx</td>
-        <td>First cycle with higher mileage</td>
-      </tr>
-      <tr>
-        <td>2025-04-28</td>
-        <td>NYC Half</td>
-        <td>Half marathon</td>
-        <td>1:42:xx</td>
-        <td>Windy, conservative start</td>
-      </tr>
+      <tr><td>5K</td><td>22:43</td><td>Greenwich Alliance Turkey Trot</td><td>11.30.24</td></tr>
+      <tr><td>26.2M</td><td>4:01:12</td><td>AACR Philadelphia Marathon</td><td>11.24.24</td></tr>
+      <tr><td>5K</td><td>23:48</td><td>Miami Runway 5K (2nd AG)</td><td>10.19.24</td></tr>
+      <tr><td>1M</td><td>6:36</td><td>26x1 Mile Club Challenge Relay Invitational</td><td>6.8.24</td></tr>
+      <tr><td>8K</td><td>37:51</td><td>Run & Walk with Pride</td><td>6.2.24</td></tr>
+      <tr><td>13.1M</td><td>1:50:52</td><td>Soul Ryeders Half Marathon</td><td>5.19.24</td></tr>
+      <tr><td>13.1M</td><td>1:53:51</td><td>Queens Spring Half (1st AG)</td><td>3.30.24</td></tr>
+    </tbody>
+  </table>
+
+  <h2>2023</h2>
+  <table>
+    <tbody>
+      <tr><td>5K</td><td>24:45</td><td>The Queens New Year's Eve 5K (1st AG)</td><td>12.31.23</td></tr>
+      <tr><td>5K</td><td>25:14</td><td>Greenwich Alliance Turkey Trot</td><td>11.25.23</td></tr>
+      <tr><td>5K</td><td>27:33</td><td>Super Sunday</td><td>2.12.23</td></tr>
     </tbody>
   </table>
 
   <div class="note">
-    Times shown are gun times unless otherwise noted.
+    June 2022 – November 2023: mysterious ankle injury 😭
   </div>
+
+  <h2>2022</h2>
+  <table>
+    <tbody>
+      <tr><td>5K</td><td>21:45</td><td>Cambridge Spring Classic</td><td>5.1.22</td></tr>
+      <tr><td>13.1M</td><td>1:44:55</td><td>Shamrock Half Marathon</td><td>3.20.22</td></tr>
+      <tr><td>5M</td><td>38:56</td><td>Super Sunday</td><td>2.13.22</td></tr>
+    </tbody>
+  </table>
+
+  <h2>2021</h2>
+  <table>
+    <tbody>
+      <tr><td>5K</td><td>22:56</td><td>Cambridge Winter Classic</td><td>12.5.21</td></tr>
+      <tr><td>5K</td><td>24:06</td><td>Greenwich Alliance Turkey Trot (3rd AG)</td><td>11.27.21</td></tr>
+      <tr><td>6K XC</td><td>30:42</td><td>USATF-NE XC Championship</td><td>11.7.21</td></tr>
+      <tr><td>26.2M</td><td>4:26:46</td><td>Hartford Marathon</td><td>10.9.21</td></tr>
+      <tr><td>10K</td><td>53:52</td><td>Lone Gull</td><td>9.19.21</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Earlier</h2>
+  <table>
+    <tbody>
+      <tr><td>13.1M</td><td>1:58:48</td><td>Lake Effect Half Marathon</td><td>2.23.20</td></tr>
+      <tr><td>5K</td><td>21:41</td><td>Greenwich Alliance Turkey Trot (3rd AG)</td><td>11.30.19</td></tr>
+      <tr><td>5K XC</td><td>25:28</td><td>PGXC Race 2</td><td>9.22.19</td></tr>
+      <tr><td>10K</td><td>52:33</td><td>45th Annual Ithaca 5 & 10</td><td>9.15.19</td></tr>
+      <tr><td>13.1M</td><td>2:01:03</td><td>Lake Effect Half Marathon (3rd AG)</td><td>2.24.19</td></tr>
+      <tr><td>4K XC</td><td>20:17</td><td>FCIAC XC Championships</td><td>10.24.11</td></tr>
+      <tr><td>2.5K XC</td><td>11:45</td><td>FCIAC XC Championships</td><td>10.21.10</td></tr>
+    </tbody>
+  </table>
+
 </body>
 </html>
