@@ -402,6 +402,7 @@ window.RUNNING_DATA = {
       distance: "5K XC",
       time: "25:28",
       race: "PGXC Race 2",
+      location: "Fairport, NY",
       date: "2019-09-22",
       notes: "",
       url: "https://runsignup.com/Race/Results/24038/IndividualResult/CcCc?resultSetId=171622#U29590864"
