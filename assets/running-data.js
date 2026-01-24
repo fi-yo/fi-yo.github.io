@@ -492,7 +492,7 @@ window.RUNNING_DATA = {
       location: "Danby, NY",
       date: "2018-10-06",
       notes: "",
-      url: ""
+      url: "https://www.webscorer.com/racedetails?raceid=155083&did=172026"
     },
     {
       year: 2018,
