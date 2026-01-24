@@ -59,7 +59,8 @@ window.RUNNING_DATA = {
       time: "38:56",
       race: "Super Sunday",
       location: "Cambridge, MA",
-      date: "2022-02-13"
+      date: "2022-02-13",
+      url: "https://my3.raceresult.com/192226/RRPublish/data/pdf?name=Result%20Lists%7COverall%20Results_5M&contest=1&lang=en"
     },
     {
       distance: "13.1M",
