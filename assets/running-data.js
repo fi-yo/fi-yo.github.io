@@ -432,6 +432,7 @@ window.RUNNING_DATA = {
       distance: "5M",
       time: "40:57",
       race: "Park City 5K and 5 Mile Road Race",
+      location: "Bridgeport, CT",
       date: "2019-05-26",
       notes: "10th OA",
       url: "https://www.iresultslive.com/results/?op=individual&racename=5Mile&eid=4241&bib=604"
