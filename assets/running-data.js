@@ -316,7 +316,7 @@ window.RUNNING_DATA = {
       race: "Super Sunday",
       date: "2022-02-13",
       notes: "",
-      url: ""
+      url: "https://my3.raceresult.com/192226/RRPublish/data/pdf?name=Result%20Lists%7COverall%20Results_5M&contest=1&lang=en"
     },
 
     // ===== 2021 =====
