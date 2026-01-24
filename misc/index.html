@@ -1,74 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Miscellaneous | Fiona Young</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <!-- shared site styles -->
-  <link rel="stylesheet" href="/styles.css" />
-</head>
+    <title>Miscellaneous | Fiona Young</title>
 
-<body>
+    <!-- Reuse site-wide styles -->
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
 
-  <!-- NAV (shared include later if you refactor) -->
-<body>
-  <div id="nav-slot"></div>
-
-  <!-- page content -->
-  <script src="/assets/nav.js"></script>
-</body>
-
-  <main>
+  <body>
+    <!-- shared navigation -->
+    <div id="nav-slot"></div>
+    <script src="/assets/nav.js"></script>
 
     <header>
       <h1>Miscellaneous</h1>
-      <p class="muted">A few things that don’t fit neatly elsewhere.</p>
     </header>
 
-    <details open>
-      <summary>Other fun facts</summary>
-      <div class="content">
+    <main>
+      <details open>
+        <summary>Other fun facts</summary>
+        <div class="content">
 
-        <ul class="list">
-          <li>
-            <strong>My current job:</strong>
-            solving problems at
-            <a href="https://analyticpartners.com/" target="_blank" rel="noopener">
-              Analytic Partners
-            </a>,
-            a company recognized as a <em>Leader in Marketing Measurement</em> by
-            Forrester and Gartner.
-          </li>
+          <ul class="list">
+            <li>
+              <strong>My current job:</strong>
+              solving problems at
+              <a href="https://analyticpartners.com/" target="_blank" rel="noopener">
+                Analytic Partners
+              </a>,
+              a company recognized as a <em>Leader in Marketing Measurement</em>
+              by Forrester and Gartner.
+            </li>
 
-          <li>
-            I served as the <strong>Campus Director</strong> of the
-            <a href="https://artofproblemsolving.com/school/lexington" target="_blank" rel="noopener">
-              Art of Problem Solving (AoPS) Academy Lexington
-            </a>
-            from 2020–2021.
-          </li>
+            <li>
+              I served as the <strong>Campus Director</strong> of the
+              <a
+                href="https://artofproblemsolving.com/school/lexington"
+                target="_blank"
+                rel="noopener"
+              >
+                Art of Problem Solving (AoPS) Academy Lexington
+              </a>
+              from 2020–2021.
+            </li>
 
-          <li>
-            I am a <strong>distance runner</strong> affiliated with
-            <em>To Be Determined Track Club</em>, and an alum of
-            Cambridge Running Club and Finger Lakes Runners Club.
-          </li>
+            <li>
+              I am a <strong>distance runner</strong> affiliated with
+              <em>To Be Determined Track Club</em>,
+              and an alum of Cambridge Running Club and
+              Finger Lakes Runners Club.
+            </li>
 
-          <li>
-            I’ve been self-studying the <strong>Hungarian language</strong>,
-            inspired by my time in
-            <a href="https://www.budapestsemesters.com/" target="_blank" rel="noopener">
-              Budapest Semesters in Mathematics
-            </a>.
-            <em>Vissza akarok menni!</em>
-          </li>
-        </ul>
+            <li>
+              I’ve been self-studying the <strong>Hungarian language</strong>,
+              inspired by my time in
+              <a
+                href="https://www.budapestsemesters.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                Budapest Semesters in Mathematics
+              </a>.
+              <em>Vissza akarok menni!</em>
+            </li>
+          </ul>
 
-      </div>
-    </details>
+        </div>
+      </details>
+    </main>
 
-  </main>
+    <footer style="margin:3rem 0 2rem; opacity:0.7;">
+      <small>© <span id="y"></span> Fiona Young</small>
+    </footer>
 
-</body>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
