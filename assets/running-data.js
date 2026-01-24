@@ -449,8 +449,8 @@ window.RUNNING_DATA = {
       race: "Belle Sherman 5K & Fun Run",
       location: "Ithaca, NY",
       date: "2019-04-27",
-      notes: "",
-      url: ""
+      notes: "3rd OA",
+      url: "https://www.webscorer.com/racealldetails?raceid=177751&topn=3"
     },
     {
       year: 2019,
