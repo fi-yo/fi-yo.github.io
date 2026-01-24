@@ -429,7 +429,7 @@ window.RUNNING_DATA = {
       time: "40:57",
       race: "Park City 5K and 5 Mile Road Race",
       date: "2019-05-26",
-      notes: "10th Female",
+      notes: "10th OA",
       url: "https://www.iresultslive.com/results/?op=individual&racename=5Mile&eid=4241&bib=604"
     },
     {
@@ -439,7 +439,7 @@ window.RUNNING_DATA = {
       race: "Cayuga Heights Elementary School",
       location: "Ithaca, NY",
       date: "2019-05-11",
-      notes: "2nd Female",
+      notes: "2nd OA",
       url: "https://www.webscorer.com/racedetails?raceid=179942&did=198898&cid=1008888&gender=F"
     },
     {
