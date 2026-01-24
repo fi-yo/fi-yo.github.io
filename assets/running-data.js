@@ -73,7 +73,7 @@ window.RUNNING_DATA = {
     {
       distance: "26.2M",
       time: "3:51:05",
-      race: "BoA Chicago Marathon",
+      race: "Bank of America Chicago Marathon",
       location: "Chicago, IL",
       date: "2025-10-12",
       url: "https://results.chicagomarathon.com/2025/?content=detail&fpid=search&pid=search&idp=9TGG96382B95C4&lang=EN_CAP&event=MAR&event_main_group=runner&search%5Bname%5D=young&search%5Bfirstname%5D=fiona&search_event=MAR"
@@ -132,7 +132,7 @@ window.RUNNING_DATA = {
       year: 2025,
       distance: "26.2M",
       time: "3:51:05",
-      race: "BoA Chicago Marathon",
+      race: "Bank of America Chicago Marathon",
       location: "Chicago, IL",
       date: "2025-10-12",
       notes: "",
