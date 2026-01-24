@@ -481,8 +481,8 @@ window.RUNNING_DATA = {
       race: "Dryden Rotary Fall Dash",
       location: "Dryden, NY",
       date: "2018-10-20",
-      notes: "",
-      url: ""
+      notes: "3rd OA",
+      url: "https://www.webscorer.com/racedetails?raceid=156994&did=173732&cid=884716&gender=F"
     },
     {
       year: 2018,
