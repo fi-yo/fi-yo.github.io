@@ -386,12 +386,12 @@ window.RUNNING_DATA = {
     // ===== 2019 =====
     {
       year: 2019,
-      distance: "5K",
+      distance: "5K (not quite)",
       time: "21:41",
       race: "Greenwich Alliance Turkey Trot",
       location: "Greenwich, CT",
       date: "2019-11-30",
-      notes: "3rd AG (not quite)",
+      notes: "3rd AG",
       url: ""
     },
     {
