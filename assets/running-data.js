@@ -58,6 +58,7 @@ window.RUNNING_DATA = {
       distance: "5M",
       time: "38:56",
       race: "Super Sunday",
+      location: "Cambridge, MA",
       date: "2022-02-13"
     },
     {
@@ -283,6 +284,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       time: "27:33",
       race: "Super Sunday",
+      location: "Cambridge, MA",
       date: "2023-02-12",
       notes: "",
       url: "https://my.raceresult.com/233423/"
@@ -314,6 +316,7 @@ window.RUNNING_DATA = {
       distance: "5M",
       time: "38:56",
       race: "Super Sunday",
+      location: "Cambridge, MA",
       date: "2022-02-13",
       notes: "",
       url: "https://my3.raceresult.com/192226/RRPublish/data/pdf?name=Result%20Lists%7COverall%20Results_5M&contest=1&lang=en"
