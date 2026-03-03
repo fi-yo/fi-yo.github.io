@@ -20,7 +20,7 @@ window.RUNNING_DATA = {
     },
     {
       distance: "26.2M",
-      race: "Islandsbanki Reykjavik Marathon 2026",
+      race: "Islandsbanki Reykjavik Marathon",
       location: "Reykjavik, Iceland",
       date: "2026-08-22",
       url: "https://www.rmi.is/en",
