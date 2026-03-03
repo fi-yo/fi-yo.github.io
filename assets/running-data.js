@@ -19,6 +19,13 @@ window.RUNNING_DATA = {
       url: "https://events.nyrr.org/d9a8888be4d98446fee3",
     },
     {
+      distance: "5K",
+      race: "NYRR Mindful 5K",
+      location: "Flushing Meadows, NY",
+      date: "2026-05-02",
+      url: "https://events.nyrr.org/df84552b2d5655c8c3e0",
+    },
+    {
       distance: "13.1M",
       race: "RBC Brooklyn Half",
       location: "New York, NY",
