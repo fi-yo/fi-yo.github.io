@@ -69,8 +69,8 @@
     race: u.race,
     location: u.location || "",
     date: u.date,
-    notes: u.notes || "",   // 👈 added
     url: u.url || "",
+    notes: u.notes || "",
   }));
 
   renderTable(
@@ -87,7 +87,7 @@
       },
       { key: "location", label: "Location" },
       { key: "date", label: "Date", render: (r) => fmtDate(r.date) },
-      { key: "notes", label: "Notes" },  // 👈 added column
+      { key: "notes", label: "Notes" }, // 👈 THIS is what was missing
     ],
     rows
   );
