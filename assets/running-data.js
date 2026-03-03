@@ -53,6 +53,7 @@ window.RUNNING_DATA = {
       location: "Central Park, NY",
       date: "2026-06-27",
       url: "https://events.nyrr.org/ebfafd47cd0e93a75a7d",
+    },
     {
       distance: "26.2M",
       race: "Islandsbanki Reykjavik Marathon",
