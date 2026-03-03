@@ -5,13 +5,6 @@ window.RUNNING_DATA = {
 
   upcoming: [
     {
-      distance: "50K",
-      race: "The Cowtown Ultra Marathon",
-      location: "Fort Worth, TX",
-      date: "2026-03-01",
-      url: "https://cowtownmarathon.org/",
-    },
-    {
       distance: "13.1M",
       race: "United Airlines NYC Half",
       location: "New York, NY",
@@ -35,6 +28,13 @@ window.RUNNING_DATA = {
   ],
 
   deferred: [
+    {
+      distance: "50K",
+      race: "The Cowtown Ultra Marathon",
+      location: "Fort Worth, TX",
+      date: "2026-03-01",
+      url: "https://cowtownmarathon.org/",
+    },
     {
       distance: "26.2M",
       race: "California International Marathon",
