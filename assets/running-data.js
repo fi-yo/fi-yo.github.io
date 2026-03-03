@@ -10,7 +10,7 @@ window.RUNNING_DATA = {
       location: "New York, NY",
       date: "2026-03-15",
       url: "https://events.nyrr.org/united-airlines-nyc-half?_gl=1*1mwq23t*_gcl_au*MTQwMzEzOTU2NC4xNzYzNjc3MDc2",
-      notes: "9+1 for NYC Marathon",
+      notes: "9+1 for 2027 NYC Marathon",
     },
     {
       distance: "4M",
@@ -18,7 +18,7 @@ window.RUNNING_DATA = {
       location: "Central Park, NY",
       date: "2026-04-12",
       url: "https://events.nyrr.org/d9a8888be4d98446fee3",
-      notes: "9+1 for NYC Marathon",
+      notes: "9+1 for 2027 NYC Marathon",
     },
     {
       distance: "5K",
@@ -26,7 +26,7 @@ window.RUNNING_DATA = {
       location: "Flushing Meadows, NY",
       date: "2026-05-02",
       url: "https://events.nyrr.org/df84552b2d5655c8c3e0",
-      notes: "9+1 for NYC Marathon",
+      notes: "9+1 for 2027 NYC Marathon",
     },
     {
       distance: "5K",
@@ -34,7 +34,7 @@ window.RUNNING_DATA = {
       location: "Prospect Park",
       date: "2026-05-05",
       url: "https://events.nyrr.org/6e111961485a6fe9abe3",
-      notes: "9+1 for NYC Marathon",
+      notes: "9+1 for 2027 NYC Marathon",
     },
     {
       distance: "13.1M",
@@ -42,7 +42,7 @@ window.RUNNING_DATA = {
       location: "New York, NY",
       date: "2026-05-16",
       url: "https://events.nyrr.org/rbc-brooklyn-half?_gl=1*1mwq23t*_gcl_au*MTQwMzEzOTU2NC4xNzYzNjc3MDc2",
-      notes: "9+1 for NYC Marathon",
+      notes: "9+1 for 2027 NYC Marathon",
     },
     {
       distance: "10K",
@@ -50,7 +50,7 @@ window.RUNNING_DATA = {
       location: "Central Park, NY",
       date: "2026-06-06",
       url: "https://events.nyrr.org/bfab1f49e3ca0cf498f8",
-      notes: "9+1 for NYC Marathon",
+      notes: "9+1 for 2027 NYC Marathon",
     },
     {
       distance: "4M",
@@ -58,7 +58,7 @@ window.RUNNING_DATA = {
       location: "Central Park, NY",
       date: "2026-06-27",
       url: "https://events.nyrr.org/ebfafd47cd0e93a75a7d",
-      notes: "9+1 for NYC Marathon",
+      notes: "9+1 for 2027 NYC Marathon",
     },
     {
       distance: "26.2M",
