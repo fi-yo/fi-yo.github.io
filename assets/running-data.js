@@ -84,8 +84,8 @@ window.RUNNING_DATA = {
     }
   ],
 
-  deferred: [
-  ],
+  // deferred: [
+  // ],
 
   personalBests: [
     {
