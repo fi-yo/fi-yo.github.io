@@ -365,7 +365,7 @@
     }
 
     renderUpcoming(data);
-    renderDeferred(data);
+    // renderDeferred(data);
     renderPBs(data);
     renderWishlist(data);
     renderSummary(data);
