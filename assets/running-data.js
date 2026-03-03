@@ -10,7 +10,7 @@ window.RUNNING_DATA = {
       location: "New York, NY",
       date: "2026-03-15",
       url: "https://events.nyrr.org/united-airlines-nyc-half?_gl=1*1mwq23t*_gcl_au*MTQwMzEzOTU2NC4xNzYzNjc3MDc2",
-      note: "9+1 race for NYRR NYC Marathon",
+      notes: "9+1 race for NYRR NYC Marathon",
     },
     {
       distance: "4M",
