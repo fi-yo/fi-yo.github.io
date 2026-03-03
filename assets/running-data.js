@@ -24,6 +24,7 @@ window.RUNNING_DATA = {
       location: "Reykjavik, Iceland",
       date: "2026-08-22",
       url: "https://www.rmi.is/en",
+    },
     {
       distance: "26.2M",
       race: "Marine Corps Marathon",
