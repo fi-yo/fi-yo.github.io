@@ -93,41 +93,41 @@
   );
 }
 
-  function renderDeferred(data) {
-    const el = $("deferredSection");
-    if (!el) return;
+  // function renderDeferred(data) {
+  //   const el = $("deferredSection");
+  //   if (!el) return;
 
-    const rows = (data.deferred || []).map((d) => ({
-      distance: d.distance,
-      race: d.race,
-      location: d.location || "",
-      date: d.date,
-      notes: d.notes || "",
-      url: d.url || "",
-    }));
+  //   const rows = (data.deferred || []).map((d) => ({
+  //     distance: d.distance,
+  //     race: d.race,
+  //     location: d.location || "",
+  //     date: d.date,
+  //     notes: d.notes || "",
+  //     url: d.url || "",
+  //   }));
 
-    renderTable(
-      el,
-      [
-        { key: "distance", label: "Distance" },
-        {
-          key: "race",
-          label: "Race",
-          render: (r) =>
-            r.url
-              ? `<a href="${r.url}" target="_blank" rel="noopener">${safeText(r.race)}</a>`
-              : safeText(r.race),
-        },
-        { key: "location", label: "Location" },
-        {
-          key: "date",
-          label: "Date",
-          render: (r) => `${fmtDate(r.date)}${r.notes ? ` (${safeText(r.notes)})` : ""}`,
-        },
-      ],
-      rows
-    );
-  }
+  //   renderTable(
+  //     el,
+  //     [
+  //       { key: "distance", label: "Distance" },
+  //       {
+  //         key: "race",
+  //         label: "Race",
+  //         render: (r) =>
+  //           r.url
+  //             ? `<a href="${r.url}" target="_blank" rel="noopener">${safeText(r.race)}</a>`
+  //             : safeText(r.race),
+  //       },
+  //       { key: "location", label: "Location" },
+  //       {
+  //         key: "date",
+  //         label: "Date",
+  //         render: (r) => `${fmtDate(r.date)}${r.notes ? ` (${safeText(r.notes)})` : ""}`,
+  //       },
+  //     ],
+  //     rows
+  //   );
+  // }
 
   function renderPBs(data) {
     const el = $("pbsSection");
