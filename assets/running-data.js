@@ -40,6 +40,13 @@ window.RUNNING_DATA = {
       url: "https://events.nyrr.org/rbc-brooklyn-half?_gl=1*1mwq23t*_gcl_au*MTQwMzEzOTU2NC4xNzYzNjc3MDc2",
     },
     {
+      distance: "10K",
+      race: "Mastercard New York Mini 10K",
+      location: "Central Park, NY",
+      date: "2026-06-06",
+      url: "https://events.nyrr.org/bfab1f49e3ca0cf498f8",
+    },
+    {
       distance: "26.2M",
       race: "Islandsbanki Reykjavik Marathon",
       location: "Reykjavik, Iceland",
