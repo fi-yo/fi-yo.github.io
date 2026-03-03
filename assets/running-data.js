@@ -85,14 +85,6 @@ window.RUNNING_DATA = {
   ],
 
   deferred: [
-    {
-      distance: "26.2M",
-      race: "California International Marathon",
-      location: "Sacramento, CA",
-      date: "2025-12-07",
-      notes: "running in 2026", 
-      url: "https://runsra.org/california-international-marathon/"
-    }
   ],
 
   personalBests: [
