@@ -70,6 +70,7 @@
       location: u.location || "",
       date: u.date,
       url: u.url || "",
+      notes: u.notes || "",
     }));
 
     renderTable(
