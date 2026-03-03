@@ -47,6 +47,12 @@ window.RUNNING_DATA = {
       url: "https://events.nyrr.org/bfab1f49e3ca0cf498f8",
     },
     {
+      distance: "4M",
+      race: "Front Runners New York LGBTQ+ Pride Run 4M",
+      location: "Central Park, NY",
+      date: "2026-06-27",
+      url: "https://events.nyrr.org/ebfafd47cd0e93a75a7d",
+    {
       distance: "26.2M",
       race: "Islandsbanki Reykjavik Marathon",
       location: "Reykjavik, Iceland",
