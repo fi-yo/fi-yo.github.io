@@ -12,6 +12,13 @@ window.RUNNING_DATA = {
       url: "https://events.nyrr.org/united-airlines-nyc-half?_gl=1*1mwq23t*_gcl_au*MTQwMzEzOTU2NC4xNzYzNjc3MDc2",
     },
     {
+      distance: "4M",
+      race: "Run as One 4M",
+      location: "Central Park, NY",
+      date: "2026-04-12",
+      url: "https://events.nyrr.org/d9a8888be4d98446fee3",
+    },
+    {
       distance: "13.1M",
       race: "RBC Brooklyn Half",
       location: "New York, NY",
