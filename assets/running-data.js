@@ -26,6 +26,13 @@ window.RUNNING_DATA = {
       url: "https://events.nyrr.org/df84552b2d5655c8c3e0",
     },
     {
+      distance: "5K",
+      race: "NYRR BK 5K",
+      location: "Prospect Park",
+      date: "2026-05-05",
+      url: "https://events.nyrr.org/6e111961485a6fe9abe3",
+    },
+    {
       distance: "13.1M",
       race: "RBC Brooklyn Half",
       location: "New York, NY",
