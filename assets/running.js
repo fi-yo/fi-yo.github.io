@@ -61,36 +61,37 @@
   }
 
   function renderUpcoming(data) {
-    const el = $("upcomingSection");
-    if (!el) return;
+  const el = $("upcomingSection");
+  if (!el) return;
 
-    const rows = (data.upcoming || []).map((u) => ({
-      distance: u.distance,
-      race: u.race,
-      location: u.location || "",
-      date: u.date,
-      url: u.url || "",
-      notes: u.notes || "",
-    }));
+  const rows = (data.upcoming || []).map((u) => ({
+    distance: u.distance,
+    race: u.race,
+    location: u.location || "",
+    date: u.date,
+    notes: u.notes || "",   // 👈 added
+    url: u.url || "",
+  }));
 
-    renderTable(
-      el,
-      [
-        { key: "distance", label: "Distance" },
-        {
-          key: "race",
-          label: "Race",
-          render: (r) =>
-            r.url
-              ? `<a href="${r.url}" target="_blank" rel="noopener">${safeText(r.race)}</a>`
-              : safeText(r.race),
-        },
-        { key: "location", label: "Location" },
-        { key: "date", label: "Date", render: (r) => fmtDate(r.date) },
-      ],
-      rows
-    );
-  }
+  renderTable(
+    el,
+    [
+      { key: "distance", label: "Distance" },
+      {
+        key: "race",
+        label: "Race",
+        render: (r) =>
+          r.url
+            ? `<a href="${r.url}" target="_blank" rel="noopener">${safeText(r.race)}</a>`
+            : safeText(r.race),
+      },
+      { key: "location", label: "Location" },
+      { key: "date", label: "Date", render: (r) => fmtDate(r.date) },
+      { key: "notes", label: "Notes" },  // 👈 added column
+    ],
+    rows
+  );
+}
 
   function renderDeferred(data) {
     const el = $("deferredSection");
