@@ -19,6 +19,12 @@ window.RUNNING_DATA = {
       url: "https://events.nyrr.org/rbc-brooklyn-half?_gl=1*1mwq23t*_gcl_au*MTQwMzEzOTU2NC4xNzYzNjc3MDc2",
     },
     {
+      distance: "262.M",
+      race: "Islandsbanki Reykjavik Marathon 2026",
+      location: "Reykjavik, Iceland",
+      date: "2026-08-22",
+      url: "https://www.rmi.is/en",
+    {
       distance: "26.2M",
       race: "Marine Corps Marathon",
       location: "Washington, D.C.",
