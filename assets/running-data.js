@@ -5,14 +5,6 @@ window.RUNNING_DATA = {
 
   upcoming: [
     {
-      distance: "13.1M",
-      race: "United Airlines NYC Half",
-      location: "New York, NY",
-      date: "2026-03-15",
-      url: "https://events.nyrr.org/united-airlines-nyc-half?_gl=1*1mwq23t*_gcl_au*MTQwMzEzOTU2NC4xNzYzNjc3MDc2",
-      notes: "9+1 for 2027 NYC Marathon",
-    },
-    {
       distance: "4M",
       race: "Run as One 4M",
       location: "Central Park, NY",
@@ -126,6 +118,17 @@ window.RUNNING_DATA = {
   raceResults: [
 
     // ===== 2025 =====
+
+    {
+      year: 2026,
+      distance: "13.1M",
+      time: "1:47:11",
+      race: "United Airlines NYC Half",
+      location: "New York, NY",
+      date: "2026-03-15",
+      url: "https://results.nyrr.org/runner/5922/result/H2026",
+      notes: "9+1 for 2027 NYC Marathon",
+    },
 
     {
       year: 2025,
