@@ -117,7 +117,7 @@ window.RUNNING_DATA = {
 
   raceResults: [
 
-    // ===== 2025 =====
+    // ===== 2026 =====
 
     {
       year: 2026,
@@ -129,6 +129,8 @@ window.RUNNING_DATA = {
       url: "https://results.nyrr.org/runner/5922/result/H2026",
       notes: "9+1 for 2027 NYC Marathon",
     },
+
+    // ===== 2025 =====
 
     {
       year: 2025,
