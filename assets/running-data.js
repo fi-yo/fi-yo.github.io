@@ -14,6 +14,14 @@ window.RUNNING_DATA = {
     },
     {
       distance: "5K",
+      race: "SRC 5K",
+      location: "Stamford, CT",
+      date: "2026-04-19",
+      url: "https://runsignup.com/Race/CT/Stamford/SRC5k10kHalfMarathon",
+      notes: "",
+    },
+    {
+      distance: "5K",
       race: "NYRR Mindful 5K",
       location: "Flushing Meadows, NY",
       date: "2026-05-02",
