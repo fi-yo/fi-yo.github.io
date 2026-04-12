@@ -5,14 +5,6 @@ window.RUNNING_DATA = {
 
   upcoming: [
     {
-      distance: "4M",
-      race: "Run as One 4M",
-      location: "Central Park, NY",
-      date: "2026-04-12",
-      url: "https://events.nyrr.org/d9a8888be4d98446fee3",
-      notes: "9+1 for 2027 NYC Marathon",
-    },
-    {
       distance: "5K",
       race: "Stamford Run Club 5K",
       location: "Stamford, CT",
@@ -126,6 +118,15 @@ window.RUNNING_DATA = {
   raceResults: [
 
     // ===== 2026 =====
+
+    {
+      distance: "4M",
+      race: "Run as One 4M",
+      location: "Central Park, NY",
+      date: "2026-04-12",
+      url: "https://events.nyrr.org/d9a8888be4d98446fee3",
+      notes: "9+1 for 2027 NYC Marathon",
+    },
 
     {
       year: 2026,
