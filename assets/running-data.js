@@ -455,7 +455,7 @@ window.RUNNING_DATA = {
       race: "Greenwich Alliance Turkey Trot",
       location: "Greenwich, CT",
       date: "2019-11-30",
-      notes: "3rd AG, course was mismeasured",
+      notes: "3rd AG, course was undermeasured",
       url: ""
     },
     {
