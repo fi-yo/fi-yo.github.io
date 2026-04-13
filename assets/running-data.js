@@ -97,14 +97,6 @@ window.RUNNING_DATA = {
       url: "https://my3.raceresult.com/192226/RRPublish/data/pdf?name=Result%20Lists%7COverall%20Results_5M&contest=1&lang=en"
     },
     {
-      distance: "10K",
-      time: "52:33",
-      race: "45th Annual Ithaca 5 & 10",
-      location: "Ithaca, NY",
-      date: "2019-09-15",
-      url: "https://www.leonetiming.com/results/runner.php?id=2284476&tpl=results-gun-only.tpl"
-    },
-    {
       distance: "13.1M",
       time: "1:44:55",
       race: "Shamrock Half Marathon",
