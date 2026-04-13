@@ -126,7 +126,7 @@ window.RUNNING_DATA = {
       race: "Run as One 4M",
       location: "Central Park, NY",
       date: "2026-04-12",
-      url: "https://events.nyrr.org/d9a8888be4d98446fee3",
+      url: "https://results.nyrr.org/event/26RAO4M/result/584",
       notes: "9+1 for 2027 NYC Marathon",
     },
 
