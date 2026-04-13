@@ -648,7 +648,6 @@ window.RUNNING_DATA = {
     { name: "Martha's Vineyard Marathon", url: "" },
     { name: "Wineglass Marathon", url: "https://www.wineglassmarathon.com/" },
     { name: "Cambridge Half Marathon", url: "" },
-    { name: "RBC Brooklyn Half", url: "https://www.nyrr.org/races/rbcbrooklynhalf" },
     { name: "Abbott Dash to the Finish Line", url: "https://www.nyrr.org/races/abbottdashtothefinishline5k" },
     { name: "Oahu Pentathlon", url: "" },
     { name: "Athens Marathon", url: "https://www.athensauthenticmarathon.gr/site/" },
