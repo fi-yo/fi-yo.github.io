@@ -54,7 +54,7 @@
     var mins = Math.floor(paceSecs / 60);
     var remainder = Math.round(paceSecs % 60);
     if (remainder === 60) { mins++; remainder = 0; }
-    return mins + ":" + (remainder < 10 ? "0" : "") + remainder + " /mi";
+    return mins + ":" + (remainder < 10 ? "0" : "") + remainder + "/mi";
   }
 
   function uniq(arr) {
