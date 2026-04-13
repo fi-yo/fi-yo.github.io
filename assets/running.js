@@ -30,6 +30,33 @@
     return null;
   }
 
+  function distanceToMiles(dist) {
+    // Parse distance strings like "5K", "13.1M", "26.2M", "8K",
+    // "6K XC", "10K Trail", "5K (not quite)", "8.4M leg in relay",
+    // "4K XC", "2.5K XC", "5K XC", "1M", "5M"
+    if (!dist) return null;
+    var m;
+    // Match number + K (kilometers) — may have suffix like " XC", " Trail", " (not quite)"
+    m = dist.match(/^([\d.]+)\s*K/i);
+    if (m) return parseFloat(m[1]) * 0.621371;
+    // Match number + M (miles) — may have suffix like " leg in relay"
+    m = dist.match(/^([\d.]+)\s*M/i);
+    if (m) return parseFloat(m[1]);
+    return null;
+  }
+
+  function computePace(distance, time) {
+    // Returns pace as "m:ss /mi" string, or "" if not computable
+    var miles = distanceToMiles(distance);
+    var secs = timeToSeconds(time);
+    if (!miles || !secs || miles <= 0) return "";
+    var paceSecs = secs / miles;
+    var mins = Math.floor(paceSecs / 60);
+    var remainder = Math.round(paceSecs % 60);
+    if (remainder === 60) { mins++; remainder = 0; }
+    return mins + ":" + (remainder < 10 ? "0" : "") + remainder + " /mi";
+  }
+
   function uniq(arr) {
     return [...new Set(arr)].sort((a, b) => a.localeCompare(b));
   }
@@ -87,47 +114,11 @@
       },
       { key: "location", label: "Location" },
       { key: "date", label: "Date", render: (r) => fmtDate(r.date) },
-      { key: "notes", label: "Notes" }, // 👈 THIS is what was missing
+      { key: "notes", label: "Notes" },
     ],
     rows
   );
 }
-
-  // function renderDeferred(data) {
-  //   const el = $("deferredSection");
-  //   if (!el) return;
-
-  //   const rows = (data.deferred || []).map((d) => ({
-  //     distance: d.distance,
-  //     race: d.race,
-  //     location: d.location || "",
-  //     date: d.date,
-  //     notes: d.notes || "",
-  //     url: d.url || "",
-  //   }));
-
-  //   renderTable(
-  //     el,
-  //     [
-  //       { key: "distance", label: "Distance" },
-  //       {
-  //         key: "race",
-  //         label: "Race",
-  //         render: (r) =>
-  //           r.url
-  //             ? `<a href="${r.url}" target="_blank" rel="noopener">${safeText(r.race)}</a>`
-  //             : safeText(r.race),
-  //       },
-  //       { key: "location", label: "Location" },
-  //       {
-  //         key: "date",
-  //         label: "Date",
-  //         render: (r) => `${fmtDate(r.date)}${r.notes ? ` (${safeText(r.notes)})` : ""}`,
-  //       },
-  //     ],
-  //     rows
-  //   );
-  // }
 
   function renderPBs(data) {
     const el = $("pbsSection");
@@ -136,6 +127,7 @@
     const rows = (data.personalBests || []).map((p) => ({
       distance: p.distance,
       time: p.time,
+      pace: computePace(p.distance, p.time),
       race: p.race,
       location: p.location || "",
       date: p.date,
@@ -154,6 +146,7 @@
               ? `<a href="${r.url}" target="_blank" rel="noopener">${safeText(r.time)}</a>`
               : safeText(r.time),
         },
+        { key: "pace", label: "Pace" },
         { key: "race", label: "Race" },
         { key: "location", label: "Location" },
         { key: "date", label: "Date", render: (r) => fmtDate(r.date) },
@@ -199,6 +192,7 @@
             <tr>
               <th>Distance</th>
               <th>Time</th>
+              <th>Pace</th>
               <th>Race</th>
               <th>Location</th>
               <th>Date</th>
@@ -212,10 +206,12 @@
                   r.url && safeText(r.url).trim()
                     ? `<a href="${r.url}" target="_blank" rel="noopener">${safeText(r.time)}</a>`
                     : safeText(r.time);
+                const pace = computePace(r.distance, r.time);
                 return `
                   <tr>
                     <td>${safeText(r.distance)}</td>
                     <td>${timeCell}</td>
+                    <td>${safeText(pace)}</td>
                     <td>${safeText(r.race)}</td>
                     <td>${safeText(r.location || "")}</td>
                     <td>${fmtDate(r.date)}</td>
@@ -365,7 +361,6 @@
     }
 
     renderUpcoming(data);
-    // renderDeferred(data);
     renderPBs(data);
     renderWishlist(data);
     renderSummary(data);
