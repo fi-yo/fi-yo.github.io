@@ -120,7 +120,9 @@ window.RUNNING_DATA = {
     // ===== 2026 =====
 
     {
+      year: 2026,
       distance: "4M",
+      time: "34:18",
       race: "Run as One 4M",
       location: "Central Park, NY",
       date: "2026-04-12",
