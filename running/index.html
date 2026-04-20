@@ -12,6 +12,20 @@
       max-width: 1400px;
     }
 
+    /* prevent sidebar contents from overflowing */
+    .running-sidebar .stats {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .running-sidebar table {
+      font-size: 0.85rem;
+    }
+
+    .running-sidebar th,
+    .running-sidebar td {
+      padding: 0.4rem 0.3rem;
+    }
+
     .running-layout {
       display: flex;
       align-items: flex-start;
