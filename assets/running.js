@@ -328,8 +328,6 @@
     const majorTotal = (data.wishlist?.majors || []).length || 0;
 
     const stats = [
-      { label: "Marathon PR", value: pbMar },
-      { label: "Half PR", value: pbHalf },
       { label: "5M PR", value: pb5m },
       { label: "5K PR", value: pb5k },
       { label: "Half marathons completed", value: String(halfMarathonsCompleted) },
