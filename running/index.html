@@ -7,15 +7,20 @@
   <title>Running | Fiona Young</title>
   <link rel="stylesheet" href="/assets/styles.css" />
   <style>
+    /* stretch the running page wider than the global 980px cap */
+    body {
+      max-width: 1400px;
+    }
+
     .running-layout {
       display: flex;
       align-items: flex-start;
-      gap: 2rem;
+      gap: 1.25rem;
     }
 
     .running-sidebar {
-      width: 260px;
-      min-width: 260px;
+      width: 220px;
+      min-width: 220px;
       position: sticky;
       top: 1rem;
       max-height: calc(100vh - 2rem);
@@ -27,7 +32,7 @@
       min-width: 0;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       .running-layout {
         flex-direction: column;
       }
@@ -94,7 +99,10 @@
           <div id="resultsTable"></div>
         </div>
       </details>
+    </main>
 
+    <!-- Sticky right sidebar: wishlist -->
+    <aside class="running-sidebar">
       <details open>
         <summary>Race Wishlist</summary>
         <div class="content">
@@ -104,7 +112,7 @@
           <ul id="wishlistOther"></ul>
         </div>
       </details>
-    </main>
+    </aside>
 
   </div>
 
