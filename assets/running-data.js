@@ -6,14 +6,6 @@ window.RUNNING_DATA = {
   upcoming: [
     {
       distance: "5K",
-      race: "Stamford Run Club 5K",
-      location: "Stamford, CT",
-      date: "2026-04-19",
-      url: "https://runsignup.com/Race/CT/Stamford/SRC5k10kHalfMarathon",
-      notes: "",
-    },
-    {
-      distance: "5K",
       race: "NYRR Mindful 5K",
       location: "Flushing Meadows, NY",
       date: "2026-05-02",
@@ -118,7 +110,16 @@ window.RUNNING_DATA = {
   raceResults: [
 
     // ===== 2026 =====
-
+    {
+      year: "2026",
+      distance: "5K",
+      time: "22:43",
+      race: "Stamford Run Club 5K",
+      location: "Stamford, CT",
+      date: "2026-04-19",
+      url: "https://runsignup.com/Race/Results/198438/IndividualResult/RRGdD?resultSetId=643746#U29590864",
+      notes: "1st OA",
+    },
     {
       year: 2026,
       distance: "4M",
