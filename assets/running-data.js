@@ -111,7 +111,7 @@ window.RUNNING_DATA = {
 
     // ===== 2026 =====
     {
-      year: "2026",
+      year: 2026,
       distance: "5K",
       time: "22:43",
       race: "Stamford Run Club 5K",
