@@ -4,92 +4,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<body>
-  <div id="nav-slot"></div>
-
-  <!-- page content -->
-  <script src="/assets/nav.js"></script>
-</body>
-
-  
   <title>Running | Fiona Young</title>
-
-  <!-- Shared site styles -->
   <link rel="stylesheet" href="/assets/styles.css" />
-</head>
+  <style>
+    .running-layout {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+    }
 
+    .running-sidebar {
+      width: 260px;
+      min-width: 260px;
+      position: sticky;
+      top: 1rem;
+      max-height: calc(100vh - 2rem);
+      overflow-y: auto;
+    }
+
+    .running-main {
+      flex: 1;
+      min-width: 0;
+    }
+
+    @media (max-width: 768px) {
+      .running-layout {
+        flex-direction: column;
+      }
+      .running-sidebar {
+        width: 100%;
+        min-width: unset;
+        position: static;
+        max-height: unset;
+      }
+    }
+  </style>
+</head>
 <body>
-  <!-- Shared navbar (injected by /assets/nav.js) -->
   <div id="nav"></div>
 
   <h1>Running</h1>
   <p class="muted">Upcoming races, personal bests, and race results (chip time).</p>
 
-  <!-- Summary (auto-computed in running.js) -->
-  <div class="summary">
-    <h2>Summary</h2>
-    <div class="stats" id="stats"></div>
+  <div class="running-layout">
+
+    <!-- Sticky sidebar: summary + personal bests -->
+    <aside class="running-sidebar">
+      <div class="summary">
+        <h2>Summary</h2>
+        <div class="stats" id="stats"></div>
+      </div>
+      <details open>
+        <summary>Personal Bests</summary>
+        <div class="content" id="pbsSection"></div>
+      </details>
+    </aside>
+
+    <!-- Scrollable main content -->
+    <main class="running-main">
+      <details open>
+        <summary>Upcoming Races</summary>
+        <div class="content" id="upcomingSection"></div>
+      </details>
+
+      <details open>
+        <summary>Race Results (chip time)</summary>
+        <div class="content">
+          <div class="controls">
+            <label>
+              Search:
+              <input id="search" type="text" placeholder="race, location, notes, distance…" />
+            </label>
+            <label>
+              Distance:
+              <select id="distanceFilter">
+                <option value="">All</option>
+              </select>
+            </label>
+            <label>
+              Sort:
+              <select id="sortBy">
+                <option value="date-desc">Date (newest → oldest)</option>
+                <option value="date-asc">Date (oldest → newest)</option>
+                <option value="time-asc">Time (fastest → slowest)</option>
+                <option value="time-desc">Time (slowest → fastest)</option>
+              </select>
+            </label>
+          </div>
+          <div id="resultsTable"></div>
+        </div>
+      </details>
+
+      <details open>
+        <summary>Race Wishlist</summary>
+        <div class="content">
+          <p class="muted">Abbott World Marathon Majors (have yet to win any lotteries! 😢)</p>
+          <div id="majorsStatus"></div>
+          <h3>Other races</h3>
+          <ul id="wishlistOther"></ul>
+        </div>
+      </details>
+    </main>
+
   </div>
 
-  <!-- Sections -->
-  <details open>
-    <summary>Upcoming Races</summary>
-    <div class="content" id="upcomingSection"></div>
-  </details>
-
-  <!-- <details open>
-    <summary>Deferred Races</summary>
-    <div class="content" id="deferredSection"></div>
-  </details> -->
-
-  <details open>
-    <summary>Personal Bests</summary>
-    <div class="content" id="pbsSection"></div>
-  </details>
-
-  <details open>
-    <summary>Race Results (chip time)</summary>
-    <div class="content">
-      <div class="controls">
-        <label>
-          Search:
-          <input id="search" type="text" placeholder="race, location, notes, distance…" />
-        </label>
-
-        <label>
-          Distance:
-          <select id="distanceFilter">
-            <option value="">All</option>
-          </select>
-        </label>
-
-        <label>
-          Sort:
-          <select id="sortBy">
-            <option value="date-desc">Date (newest → oldest)</option>
-            <option value="date-asc">Date (oldest → newest)</option>
-            <option value="time-asc">Time (fastest → slowest)</option>
-            <option value="time-desc">Time (slowest → fastest)</option>
-          </select>
-        </label>
-      </div>
-      <div id="resultsTable"></div>
-    </div>
-  </details>
-
-  <details open>
-    <summary>Race Wishlist</summary>
-    <div class="content">
-      <p class="muted">Abbott World Marathon Majors (have yet to win any lotteries! 😢)</p>
-      <div id="majorsStatus"></div>
-
-      <h3>Other races</h3>
-      <ul id="wishlistOther"></ul>
-    </div>
-  </details>
-
-  <!-- Scripts (order matters) -->
   <script src="/assets/nav.js"></script>
   <script src="/assets/running-data.js"></script>
   <script src="/assets/running.js"></script>
