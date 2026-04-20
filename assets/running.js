@@ -146,10 +146,6 @@
               ? `<a href="${r.url}" target="_blank" rel="noopener">${safeText(r.time)}</a>`
               : safeText(r.time),
         },
-        { key: "pace", label: "Pace" },
-        { key: "race", label: "Race" },
-        { key: "location", label: "Location" },
-        { key: "date", label: "Date", render: (r) => fmtDate(r.date) },
       ],
       rows
     );
