@@ -1,4 +1,28 @@
 /* =========================================================
+   Design tokens
+   ========================================================= */
+
+:root {
+  --accent:  oklch(54% 0.20 265);
+  --text:    oklch(13% 0.008 265);
+  --muted:   oklch(42% 0.010 265);
+  --border:  oklch(89% 0.008 265);
+  --bg:      oklch(99% 0.003 265);
+  --surface: oklch(97% 0.004 265);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent:  oklch(68% 0.18 265);
+    --text:    oklch(92% 0.006 265);
+    --muted:   oklch(65% 0.008 265);
+    --border:  oklch(26% 0.010 265);
+    --bg:      oklch(12% 0.005 265);
+    --surface: oklch(17% 0.006 265);
+  }
+}
+
+/* =========================================================
    Global layout & typography
    ========================================================= */
 
@@ -8,23 +32,25 @@
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  max-width: 1400px;
+  max-width: 860px;
   margin: 0 auto;
-  padding: 0 1.2rem;
-  line-height: 1.6;
-  color: #111;
-  background: #fff;
+  padding: 2rem 1.5rem 0;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
 }
 
 h1 {
   font-size: 2.4rem;
   margin: 0.5rem 0 0.25rem;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 h2 {
   margin-top: 2.5rem;
   padding-bottom: 0.35rem;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--border);
 }
 
 h3 {
@@ -36,16 +62,22 @@ p {
 }
 
 .muted {
-  color: #555;
+  color: var(--muted);
 }
 
 a {
-  color: #2563eb;
+  color: var(--accent);
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 /* =========================================================
@@ -57,18 +89,30 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   padding: 1.25rem 0;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--border);
   margin-bottom: 2rem;
 }
 
 .brand {
   font-weight: 700;
-  color: #111;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand:hover {
+  text-decoration: none;
+  opacity: 0.75;
 }
 
 .navlinks a {
-  margin-left: 1rem;
+  margin-left: 1.25rem;
   font-weight: 500;
+  color: var(--muted);
+}
+
+.navlinks a:hover {
+  color: var(--text);
+  text-decoration: none;
 }
 
 /* =========================================================
@@ -76,11 +120,11 @@ a:hover {
    ========================================================= */
 
 .summary {
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
   border-radius: 14px;
   padding: 1rem 1.1rem;
   margin: 1.5rem 0 2rem;
-  background: #fff;
+  background: var(--surface);
 }
 
 .summary h2 {
@@ -96,13 +140,14 @@ a:hover {
 }
 
 .stat {
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 0.75rem 0.85rem;
+  background: var(--bg);
 }
 
 .stat .label {
-  color: #555;
+  color: var(--muted);
   font-size: 0.9rem;
 }
 
@@ -126,17 +171,16 @@ table {
 th,
 td {
   text-align: left;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--border);
   padding: 0.55rem 0.45rem;
   vertical-align: top;
 }
 
 th {
-  font-weight: 650;
+  font-weight: 600;
   white-space: nowrap;
 }
 
-/* clickable times */
 td a {
   font-weight: 600;
 }
@@ -155,17 +199,25 @@ td a {
 
 .controls label {
   font-size: 0.95rem;
-  color: #555;
+  color: var(--muted);
 }
 
 .controls input,
 .controls select {
   padding: 0.55rem 0.65rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
   border-radius: 10px;
   font-size: 0.95rem;
   margin-left: 0.4rem;
   min-width: 220px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.controls input:focus,
+.controls select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
 }
 
 /* =========================================================
@@ -174,10 +226,10 @@ td a {
 
 details {
   margin: 1.25rem 0;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
   border-radius: 14px;
   padding: 0.9rem 1rem;
-  background: #fff;
+  background: var(--surface);
 }
 
 summary {
@@ -202,7 +254,7 @@ details > .content {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
   border-radius: 999px;
   padding: 0.25rem 0.6rem;
   font-size: 0.9rem;
@@ -211,28 +263,40 @@ details > .content {
 }
 
 .pill.ok {
-  border-color: #c7f9cc;
-  background: #f1fff3;
+  border-color: oklch(85% 0.10 145);
+  background: oklch(97% 0.03 145);
 }
 
 .pill.no {
-  border-color: #ffe0e0;
-  background: #fff5f5;
+  border-color: oklch(85% 0.10 25);
+  background: oklch(97% 0.03 25);
+}
+
+@media (prefers-color-scheme: dark) {
+  .pill.ok {
+    border-color: oklch(40% 0.12 145);
+    background: oklch(22% 0.05 145);
+  }
+
+  .pill.no {
+    border-color: oklch(40% 0.12 25);
+    background: oklch(22% 0.05 25);
+  }
 }
 
 .dot {
   width: 10px;
   height: 10px;
   border-radius: 999px;
-  background: #bbb;
+  background: var(--muted);
 }
 
 .ok .dot {
-  background: #16a34a;
+  background: oklch(50% 0.18 145);
 }
 
 .no .dot {
-  background: #ef4444;
+  background: oklch(55% 0.20 25);
 }
 
 /* =========================================================
@@ -252,9 +316,62 @@ li {
    ========================================================= */
 
 .profile-img {
-  max-width: 180px;
+  max-width: 160px;
   border-radius: 12px;
-  margin: 1.5rem 0;
+  display: block;
+}
+
+/* =========================================================
+   Homepage hero
+   ========================================================= */
+
+.hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin: 2.5rem 0 2rem;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-text h1 {
+  margin-top: 0;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.links a {
+  display: inline-block;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--muted);
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.links a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+
+.footer {
+  margin: 3rem 0 2rem;
+  color: var(--muted);
 }
 
 /* =========================================================
@@ -264,6 +381,15 @@ li {
 @media (max-width: 640px) {
   body {
     padding: 0 1rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .profile-img {
+    max-width: 120px;
   }
 
   .nav {
@@ -284,4 +410,3 @@ li {
     margin-left: 0;
   }
 }
-
