@@ -3,27 +3,44 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-
     <title>Miscellaneous | Fiona Young</title>
-
     <!-- Reuse site-wide styles -->
     <link rel="stylesheet" href="/assets/styles.css" />
+    <style>
+      .dog-card {
+        display: flex;
+        gap: 1.5rem;
+        align-items: flex-start;
+      }
+      .dog-photo {
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 4px;
+        flex-shrink: 0;
+      }
+      @media (max-width: 600px) {
+        .dog-card {
+          flex-direction: column;
+        }
+        .dog-photo {
+          width: 100%;
+          height: auto;
+        }
+      }
+    </style>
   </head>
-
   <body>
     <!-- shared navigation -->
     <div id="nav-slot"></div>
     <script src="/assets/nav.js"></script>
-
     <header>
       <h1>Miscellaneous</h1>
     </header>
-
     <main>
       <details open>
         <summary>Other fun facts</summary>
         <div class="content">
-
           <ul class="list">
             <li>
               My most recent job (Aug '24 - Feb '26): solving problems at
@@ -31,7 +48,6 @@
               a company recognized as a <em>Leader in Marketing Measurement</em>
               by Forrester and Gartner.
             </li>
-
             <li>
               I served as the Campus Director of the
               <a
@@ -43,7 +59,6 @@
               </a>
               from 2020–2021.
             </li>
-
             <li>
               I am a distance runner affiliated with
               <em>Nankai Runners</em>,
@@ -71,9 +86,8 @@
                 Finger Lakes Runners Club.
               </a>
             </li>
-
             <li>
-              I’ve been self-studying Hungarian since 2024,
+              I've been self-studying Hungarian since 2024,
               inspired by my time at
               <a
                 href="https://www.budapestsemesters.com/"
@@ -86,15 +100,32 @@
               <em>Nehéz nyelv!</em>
             </li>
           </ul>
-
+        </div>
+      </details>
+      <details open>
+        <summary>My dog, Lila</summary>
+        <div class="content">
+          <div class="dog-card">
+            <img
+              src="/assets/lila.jpg"
+              alt="Lila, a good dog"
+              class="dog-photo"
+            />
+            <p>
+              This is Lila — the best running partner, nap companion, and
+              moral support officer I could ask for. She has strong opinions
+              about squirrels, an encyclopedic knowledge of which neighbors
+              keep treats by the door, and an uncanny ability to sense when
+              a walk is exactly five minutes away. Life is measurably better
+              with her in it.
+            </p>
+          </div>
         </div>
       </details>
     </main>
-
     <footer class="footer">
       <small>© <span id="y"></span> Fiona Young</small>
     </footer>
-
     <script>
       document.getElementById("y").textContent = new Date().getFullYear();
     </script>
