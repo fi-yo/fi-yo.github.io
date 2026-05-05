@@ -57,6 +57,7 @@ window.RUNNING_DATA = {
       location: "5th Avenue, NYC",
       date: "2026-09-13",
       url: "https://en.wikipedia.org/wiki/Fifth_Avenue_Mile",
+      notes: "9+1 for 2027 NYC Marathon",
     },
     {
       distance: "26.2M",
