@@ -6,14 +6,6 @@ window.RUNNING_DATA = {
   upcoming: [
     {
       distance: "5K",
-      race: "NYRR Mindful 5K",
-      location: "Flushing Meadows, NY",
-      date: "2026-05-02",
-      url: "https://events.nyrr.org/df84552b2d5655c8c3e0",
-      notes: "9+1 for 2027 NYC Marathon",
-    },
-    {
-      distance: "5K",
       race: "NYRR BK 5K",
       location: "Prospect Park",
       date: "2026-05-05",
@@ -118,6 +110,16 @@ window.RUNNING_DATA = {
   raceResults: [
 
     // ===== 2026 =====
+    {
+      year: 2026,
+      distance: "5K",
+      time: "26:49",
+      race: "NYRR Mindful 5K",
+      location: "Flushing Meadows, NY",
+      date: "2026-05-02",
+      url: "https://results.nyrr.org/runner/5036/result/26MIND",
+      notes: "9+1 for 2027 NYC Marathon",
+    },
     {
       year: 2026,
       distance: "5K",
