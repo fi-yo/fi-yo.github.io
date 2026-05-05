@@ -52,6 +52,13 @@ window.RUNNING_DATA = {
       url: "https://www.rmi.is/en",
     },
     {
+      distance: "1M",
+      race: "New Balance 5th Avenue Mile",
+      location: "5th Avenue, NYC",
+      date: "2026-09-13",
+      url: "https://en.wikipedia.org/wiki/Fifth_Avenue_Mile",
+    },
+    {
       distance: "26.2M",
       race: "Marine Corps Marathon",
       location: "Washington, D.C.",
