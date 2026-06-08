@@ -5,30 +5,6 @@ window.RUNNING_DATA = {
 
   upcoming: [
     {
-      distance: "5K",
-      race: "NYRR BK 5K",
-      location: "Prospect Park",
-      date: "2026-05-05",
-      url: "https://events.nyrr.org/6e111961485a6fe9abe3",
-      notes: "9+1 for 2027 NYC Marathon",
-    },
-    {
-      distance: "13.1M",
-      race: "RBC Brooklyn Half",
-      location: "New York, NY",
-      date: "2026-05-16",
-      url: "https://events.nyrr.org/rbc-brooklyn-half?_gl=1*1mwq23t*_gcl_au*MTQwMzEzOTU2NC4xNzYzNjc3MDc2",
-      notes: "9+1 for 2027 NYC Marathon",
-    },
-    {
-      distance: "10K",
-      race: "Mastercard New York Mini 10K",
-      location: "Central Park, NY",
-      date: "2026-06-06",
-      url: "https://events.nyrr.org/bfab1f49e3ca0cf498f8",
-      notes: "9+1 for 2027 NYC Marathon",
-    },
-    {
       distance: "4M",
       race: "Front Runners New York LGBTQ+ Pride Run 4M",
       location: "Central Park, NY",
@@ -110,6 +86,36 @@ window.RUNNING_DATA = {
   raceResults: [
 
     // ===== 2026 =====
+    {
+      year: 2026,
+      distance: "10K",
+      time: "55:12",
+      race: "Mastercard New York Mini 10K",
+      location: "Central Park, NY",
+      date: "2026-06-06",
+      url: "https://results.nyrr.org/runner/8124/result/26MINI",
+      notes: "9+1 for 2027 NYC Marathon",
+    },
+    {
+      year: 2026,
+      distance: "13.1M",
+      race: "RBC Brooklyn Half",
+      time: "1:54:10",
+      location: "New York, NY",
+      date: "2026-05-16",
+      url: "https://results.nyrr.org/runner/14833/result/B2026",
+      notes: "9+1 for 2027 NYC Marathon",
+    },
+    {
+      year: 2026,
+      distance: "5K",
+      time: "23:30",
+      race: "NYRR BK 5K",
+      location: "Prospect Park",
+      date: "2026-05-05",
+      url: "https://results.nyrr.org/runner/5111/result/26BKRUN5K",
+      notes: "9+1 for 2027 NYC Marathon",
+    },
     {
       year: 2026,
       distance: "5K",
