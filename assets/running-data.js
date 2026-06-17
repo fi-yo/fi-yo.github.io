@@ -28,6 +28,14 @@ window.RUNNING_DATA = {
       notes: "9+1 for 2027 NYC Marathon",
     },
     {
+      distance: "5K",
+      race: "NYRR Jersey City 5K",
+      location: "Jersey City",
+      date: "2026-10-04", 
+      url: "https://events.nyrr.org/fcda115fba77d7d2c30c",
+      notes: "9+1 for 2027 NYC Marathon",
+    },
+    {
       distance: "26.2M",
       race: "Marine Corps Marathon",
       location: "Washington, D.C.",
