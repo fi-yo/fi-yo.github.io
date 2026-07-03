@@ -6,21 +6,11 @@
   --accent:  oklch(54% 0.20 265);
   --text:    oklch(13% 0.008 265);
   --muted:   oklch(42% 0.010 265);
-  --border:  oklch(89% 0.008 265);
-  --bg:      oklch(99% 0.003 265);
-  --surface: oklch(97% 0.004 265);
+  --border:  oklch(85% 0.005 265);
+  --bg:      oklch(100% 0 0);
+  --surface: oklch(97% 0.002 265);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --accent:  oklch(68% 0.18 265);
-    --text:    oklch(92% 0.006 265);
-    --muted:   oklch(65% 0.008 265);
-    --border:  oklch(26% 0.010 265);
-    --bg:      oklch(12% 0.005 265);
-    --surface: oklch(17% 0.006 265);
-  }
-}
 
 /* =========================================================
    Global layout & typography
@@ -31,10 +21,10 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  max-width: 680px;
+  font-family: "DM Sans", system-ui, sans-serif;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 2rem 1.5rem 0;
+  padding: 2rem 3rem 0;
   line-height: 1.65;
   color: var(--text);
   background: var(--bg);
@@ -81,6 +71,23 @@ a:focus-visible {
 }
 
 /* =========================================================
+   Back link
+   ========================================================= */
+
+.back-link {
+  display: inline-block;
+  margin: 1.5rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* =========================================================
    Navbar (shared across pages)
    ========================================================= */
 
@@ -121,7 +128,7 @@ a:focus-visible {
 
 .summary {
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: 0;
   padding: 1rem 1.1rem;
   margin: 1.5rem 0 2rem;
   background: var(--surface);
@@ -141,7 +148,7 @@ a:focus-visible {
 
 .stat {
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 0;
   padding: 0.75rem 0.85rem;
   background: var(--bg);
 }
@@ -206,7 +213,7 @@ td a {
 .controls select {
   padding: 0.55rem 0.65rem;
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 0;
   font-size: 0.95rem;
   margin-left: 0.4rem;
   min-width: 220px;
@@ -227,7 +234,7 @@ td a {
 details {
   margin: 1.25rem 0;
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: 0;
   padding: 0.9rem 1rem;
   background: var(--surface);
 }
@@ -366,6 +373,323 @@ li {
 }
 
 /* =========================================================
+   Portfolio card grid
+   ========================================================= */
+
+.portfolio-heading {
+  margin-top: 2.5rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+
+/* Flip card shell */
+.card {
+  display: block;
+  height: 180px;
+  perspective: 900px;
+  text-decoration: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0;
+}
+
+.card:hover .card-inner,
+.card:focus-visible .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border: 1px solid var(--border);
+  padding: 1.25rem 1.4rem;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.6rem;
+  text-align: center;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background: var(--accent);
+  border-color: transparent;
+  color: oklch(99% 0.003 265);
+  padding: 1.25rem 1.6rem;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.card-back p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: oklch(99% 0.003 265);
+}
+
+.card-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+/* Card watermarks */
+.card--research .card-front::before,
+.card--teaching .card-front::before,
+.card--applets .card-front::before,
+.card--running .card-front::before,
+.card--leadership .card-front::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.07;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+  pointer-events: none;
+}
+
+.card--research .card-front::before {
+  content: '∫∂∑';
+  font-size: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.5rem;
+  color: var(--text);
+  background: none;
+  opacity: 0.08;
+}
+
+.card--teaching .card-front::before {
+  content: 'x²+y²';
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  background: none;
+  opacity: 0.08;
+  font-style: italic;
+}
+
+.card--applets .card-front::before {
+  content: '</ >';
+  font-size: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  background: none;
+  opacity: 0.08;
+  font-family: monospace;
+  letter-spacing: -0.5rem;
+}
+
+.card--leadership .card-front::before {
+  content: '▲▲▲';
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  background: none;
+  opacity: 0.08;
+  letter-spacing: -0.5rem;
+}
+
+.card--running .card-front::before {
+  content: '∿∿∿';
+  font-size: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  background: none;
+  opacity: 0.08;
+  letter-spacing: -0.5rem;
+}
+
+.card-title {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.card:hover .card-front,
+.card:focus-visible .card-front {
+  /* prevent flash of front face during animation */
+}
+
+/* =========================================================
+   Teaching page
+   ========================================================= */
+
+.philosophy {
+  padding: 0.75rem 0;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.philosophy p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Deck card grid */
+.deck-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 1.25rem 0 2rem;
+}
+
+.deck-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.deck-grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.deck-grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.card-deck {
+  height: 130px;
+}
+
+.card-sub {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.card-cta {
+  display: inline-block;
+  margin-top: auto;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: oklch(99% 0.003 265);
+  opacity: 0.85;
+}
+
+.card-back {
+  justify-content: space-between;
+}
+
+/* Testimonials */
+/* Testimonial carousel */
+.testimonials {
+  position: relative;
+  margin: 1.25rem 0 2rem;
+}
+
+.testimonials-track {
+  overflow: hidden;
+}
+
+.testimonials-inner {
+  display: flex;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonial {
+  flex: 0 0 100%;
+  margin: 0;
+  padding: 1.75rem 2rem;
+  border: 1px solid var(--border);
+  border-radius: 0;
+  background: var(--surface);
+  box-sizing: border-box;
+}
+
+.testimonial p {
+  margin: 0 0 0.75rem;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.testimonial cite {
+  font-size: 0.875rem;
+  color: var(--muted);
+  font-style: normal;
+}
+
+.testimonials-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+}
+
+.testimonials-arrows {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.testimonial-arrow {
+  background: var(--text);
+  border: none;
+  border-radius: 0;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.15s;
+}
+
+.testimonial-arrow:hover {
+  opacity: 0.75;
+}
+
+.testimonials-controls {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.testimonial-level {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text);
+  background: oklch(94% 0.002 265);
+  border: 1px solid var(--text);
+  border-radius: 0;
+  padding: 0.1rem 0.45rem;
+  margin-bottom: 0.6rem;
+}
+
+/* =========================================================
    Footer
    ========================================================= */
 
@@ -380,7 +704,7 @@ li {
 
 @media (max-width: 640px) {
   body {
-    padding: 0 1rem;
+    padding: 0 1.25rem;
   }
 
   .hero {
@@ -408,5 +732,15 @@ li {
     min-width: 0;
     width: 100%;
     margin-left: 0;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .deck-grid--4,
+  .deck-grid--3,
+  .deck-grid--2 {
+    grid-template-columns: 1fr;
   }
 }

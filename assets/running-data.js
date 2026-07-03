@@ -5,14 +5,6 @@ window.RUNNING_DATA = {
 
   upcoming: [
     {
-      distance: "4M",
-      race: "Front Runners New York LGBTQ+ Pride Run 4M",
-      location: "Central Park, NY",
-      date: "2026-06-27",
-      url: "https://events.nyrr.org/ebfafd47cd0e93a75a7d",
-      notes: "9+1 for 2027 NYC Marathon",
-    },
-    {
       distance: "26.2M",
       race: "Islandsbanki Reykjavik Marathon",
       location: "Reykjavik, Iceland",
@@ -31,7 +23,7 @@ window.RUNNING_DATA = {
       distance: "5K",
       race: "NYRR Jersey City 5K",
       location: "Jersey City",
-      date: "2026-10-04", 
+      date: "2026-10-04",
       url: "https://events.nyrr.org/fcda115fba77d7d2c30c",
       notes: "9+1 for 2027 NYC Marathon",
     },
@@ -39,7 +31,7 @@ window.RUNNING_DATA = {
       distance: "26.2M",
       race: "Marine Corps Marathon",
       location: "Washington, D.C.",
-      date: "2026-10-25", 
+      date: "2026-10-25",
       url: "https://www.marinemarathon.com/"
     },
     {
@@ -47,13 +39,10 @@ window.RUNNING_DATA = {
       race: "California International Marathon",
       location: "Sacramento, CA",
       date: "2026-12-06",
-      notes: "Deferred from 2025", 
+      notes: "Deferred from 2025",
       url: "https://runsra.org/california-international-marathon/"
     }
   ],
-
-  // deferred: [
-  // ],
 
   personalBests: [
     {
@@ -87,13 +76,22 @@ window.RUNNING_DATA = {
       location: "Chicago, IL",
       date: "2025-10-12",
       url: "https://results.chicagomarathon.com/2025/?content=detail&fpid=search&pid=search&idp=9TGG96382B95C4&lang=EN_CAP&event=MAR&event_main_group=runner&search%5Bname%5D=young&search%5Bfirstname%5D=fiona&search_event=MAR"
-
     }
   ],
 
   raceResults: [
 
     // ===== 2026 =====
+    {
+      year: 2026,
+      distance: "4M",
+      time: "37:30",
+      race: "Front Runners New York LGBTQ+ Pride Run 4M",
+      location: "Central Park, NY",
+      date: "2026-06-27",
+      url: "https://results.nyrr.org/runner/7744/result/26PRIDE",
+      notes: "9+1 for 2027 NYC Marathon",
+    },
     {
       year: 2026,
       distance: "10K",
@@ -154,7 +152,6 @@ window.RUNNING_DATA = {
       url: "https://results.nyrr.org/event/26RAO4M/result/584",
       notes: "9+1 for 2027 NYC Marathon",
     },
-
     {
       year: 2026,
       distance: "13.1M",
@@ -167,7 +164,16 @@ window.RUNNING_DATA = {
     },
 
     // ===== 2025 =====
-
+    {
+      year: 2025,
+      distance: "4M",
+      time: "32:19",
+      race: "NYRR Midnight Run",
+      location: "New York, NY",
+      date: "2025-12-31",
+      notes: "",
+      url: "https://results.nyrr.org/event/25MID/result/1954",
+    },
     {
       year: 2025,
       distance: "8.4M leg in relay",
@@ -175,32 +181,19 @@ window.RUNNING_DATA = {
       race: "U.S. Polo Assn. Palm Beaches Marathon Relay",
       location: "West Palm Beach, FL",
       date: "2025-12-14",
-      notes:"",
-      url:"https://accuchip.racetecresults.com/myresults.aspx?uid=16337-6718-3-608569",
+      notes: "",
+      url: "https://accuchip.racetecresults.com/myresults.aspx?uid=16337-6718-3-608569",
     },
-  
     {
       year: 2025,
-      distance: "4M",
-      time:"32:19",
-      race: "NYRR Midnight Run",
-      location: "New York, NY",
-      date: "2025-12-31",
-      notes:"",
-      url:"https://results.nyrr.org/event/25MID/result/1954",
+      distance: "5K",
+      time: "22:39",
+      race: "Greenwich Alliance Turkey Trot",
+      location: "Greenwich, CT",
+      date: "2025-11-29",
+      notes: "",
+      url: "https://runsignup.com/Race/Results/153039/IndividualResult/YTzS?resultSetId=612691#U29590864"
     },
-    
-      {
-    year: 2025,
-    distance: "5K",
-    time: "22:39",
-    race: "Greenwich Alliance Turkey Trot",
-    location: "Greenwich, CT",
-    date: "2025-11-29",
-    notes: "",
-    url: "https://runsignup.com/Race/Results/153039/IndividualResult/YTzS?resultSetId=612691#U29590864"
-  },
-
     {
       year: 2025,
       distance: "26.2M",
@@ -656,31 +649,29 @@ window.RUNNING_DATA = {
   ],
 
   wishlist: {
-  majors: [
-    { name: "Tokyo", completed: false, url: "https://www.marathon.tokyo/en/" },
-    { name: "Boston", completed: false, url: "https://www.baa.org/races/boston-marathon" },
-    { name: "London", completed: false, url: "https://www.tcslondonmarathon.com/" },
-    { name: "Sydney", completed: false, url: "https://sydneymarathon.com/" },
-    { name: "Berlin", completed: true, year: 2025, url: "https://www.bmw-berlin-marathon.com/en/" },
-    { name: "Chicago", completed: true, year: 2025, url: "https://www.chicagomarathon.com/" },
-    { name: "NYC", completed: false, url: "https://www.nyrr.org/tcsnycmarathon" }
-  ],
+    majors: [
+      { name: "Tokyo", completed: false, url: "https://www.marathon.tokyo/en/" },
+      { name: "Boston", completed: false, url: "https://www.baa.org/races/boston-marathon" },
+      { name: "London", completed: false, url: "https://www.tcslondonmarathon.com/" },
+      { name: "Sydney", completed: false, url: "https://sydneymarathon.com/" },
+      { name: "Berlin", completed: true, year: 2025, url: "https://www.bmw-berlin-marathon.com/en/" },
+      { name: "Chicago", completed: true, year: 2025, url: "https://www.chicagomarathon.com/" },
+      { name: "NYC", completed: false, url: "https://www.nyrr.org/tcsnycmarathon" }
+    ],
 
-  other: [
-    { name: "Big Sur International Marathon", url: "https://www.bsim.org/" },
-    { name: "San Francisco Marathon", url: "https://www.thesfmarathon.com/" },
-    { name: "Baystate Marathon", url: "https://www.baystatemarathon.com/" },
-    { name: "Martha's Vineyard Marathon", url: "" },
-    { name: "Wineglass Marathon", url: "https://www.wineglassmarathon.com/" },
-    { name: "Cambridge Half Marathon", url: "" },
-    { name: "Abbott Dash to the Finish Line", url: "https://www.nyrr.org/races/abbottdashtothefinishline5k" },
-    { name: "Oahu Pentathlon", url: "" },
-    { name: "Athens Marathon", url: "https://www.athensauthenticmarathon.gr/site/" },
-    { name: "Poznan Marathon", url: "https://www.poznanmaraton.pl/" },
-    { name: "Spar Budapest Marathon", url: "https://www.budapestmarathon.com/en/" }
-  ]
-}
-
+    other: [
+      { name: "Big Sur International Marathon", url: "https://www.bsim.org/" },
+      { name: "San Francisco Marathon", url: "https://www.thesfmarathon.com/" },
+      { name: "Baystate Marathon", url: "https://www.baystatemarathon.com/" },
+      { name: "Martha's Vineyard Marathon", url: "" },
+      { name: "Wineglass Marathon", url: "https://www.wineglassmarathon.com/" },
+      { name: "Cambridge Half Marathon", url: "" },
+      { name: "Abbott Dash to the Finish Line", url: "https://www.nyrr.org/races/abbottdashtothefinishline5k" },
+      { name: "Oahu Pentathlon", url: "" },
+      { name: "Athens Marathon", url: "https://www.athensauthenticmarathon.gr/site/" },
+      { name: "Poznan Marathon", url: "https://www.poznanmaraton.pl/" },
+      { name: "Spar Budapest Marathon", url: "https://www.budapestmarathon.com/en/" }
+    ]
+  }
 
 };
-
