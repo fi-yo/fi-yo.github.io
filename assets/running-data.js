@@ -84,6 +84,16 @@ window.RUNNING_DATA = {
     // ===== 2026 =====
     {
       year: 2026,
+      distance: "8K",
+      time: "35:43",
+      race: "Alameda 8K",
+      location: "Alameda, CA",
+      date: "2026-08-08",
+      url: "https://results.svetiming.com/big-huge-day-events/events/2026/alameda-10-miler/418/entrant?share=1",
+      notes: "PAUSATF race with West Valley Track Club",
+    },
+    {
+      year: 2026,
       distance: "4M",
       time: "37:30",
       race: "Front Runners New York LGBTQ+ Pride Run 4M",
