@@ -13,6 +13,14 @@ window.RUNNING_DATA = {
       notes: "9+1 for 2027 NYC Marathon",
     },
     {
+      distance: "13.1M",
+      race: "Urban Cow Half Marathon",
+      location: "Sacramento, CA",
+      date: "2026-09-27",
+      url: "https://www.urbancowhalf.com/",
+      notes: "PAUSATF race with West Valley Track Club",
+    },
+    {
       distance: "5K",
       race: "NYRR Jersey City 5K",
       location: "Jersey City",
@@ -39,14 +47,6 @@ window.RUNNING_DATA = {
 
   personalBests: [
     {
-      distance: "8K",
-      time: "35:43",
-      race: "Alameda 8K",
-      location: "Alameda, CA",
-      date: "2026-08-08",
-      url: "https://results.svetiming.com/big-huge-day-events/events/2026/alameda-10-miler/418/entrant?share=1",
-    },
-    {
       distance: "5K",
       time: "21:45",
       race: "Cambridge Spring Classic",
@@ -55,12 +55,12 @@ window.RUNNING_DATA = {
       url: "https://track.rtrt.me/e/TLMR-SPRING-CLASSIC-2022#/tracker/REG3YNUF",
     },
     {
-      distance: "5M",
-      time: "38:56",
-      race: "Super Sunday",
-      location: "Cambridge, MA",
-      date: "2022-02-13",
-      url: "https://my3.raceresult.com/192226/RRPublish/data/pdf?name=Result%20Lists%7COverall%20Results_5M&contest=1&lang=en"
+      distance: "8K",
+      time: "35:43",
+      race: "Alameda 8K",
+      location: "Alameda, CA",
+      date: "2026-08-08",
+      url: "https://results.svetiming.com/big-huge-day-events/events/2026/alameda-10-miler/418/entrant?share=1",
     },
     {
       distance: "13.1M",
