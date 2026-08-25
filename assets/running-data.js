@@ -5,13 +5,6 @@ window.RUNNING_DATA = {
 
   upcoming: [
     {
-      distance: "26.2M",
-      race: "Islandsbanki Reykjavik Marathon",
-      location: "Reykjavik, Iceland",
-      date: "2026-08-22",
-      url: "https://www.rmi.is/en",
-    },
-    {
       distance: "1M",
       race: "New Balance 5th Avenue Mile",
       location: "5th Avenue, NYC",
@@ -46,6 +39,14 @@ window.RUNNING_DATA = {
 
   personalBests: [
     {
+      distance: "8K",
+      time: "35:43",
+      race: "Alameda 8K",
+      location: "Alameda, CA",
+      date: "2026-08-08",
+      url: "https://results.svetiming.com/big-huge-day-events/events/2026/alameda-10-miler/418/entrant?share=1",
+    },
+    {
       distance: "5K",
       time: "21:45",
       race: "Cambridge Spring Classic",
@@ -71,17 +72,27 @@ window.RUNNING_DATA = {
     },
     {
       distance: "26.2M",
-      time: "3:51:05",
-      race: "Bank of America Chicago Marathon",
-      location: "Chicago, IL",
-      date: "2025-10-12",
-      url: "https://results.chicagomarathon.com/2025/?content=detail&fpid=search&pid=search&idp=9TGG96382B95C4&lang=EN_CAP&event=MAR&event_main_group=runner&search%5Bname%5D=young&search%5Bfirstname%5D=fiona&search_event=MAR"
+      time: "3:34:33",
+      race: "Islandsbanki Reykjavik Marathon",
+      location: "Reykjavik, Iceland",
+      date: "2026-08-22",
+      url: "https://results.corsa.is/reykjavikur-marathon/view/176637"
     }
   ],
 
   raceResults: [
 
     // ===== 2026 =====
+    {
+      year: 2026,
+      distance: "26.2M",
+      time: "3:34:33",
+      race: "Islandsbanki Reykjavik Marathon",
+      location: "Reykjavik, Iceland",
+      date: "2026-08-22",
+      url: "https://results.corsa.is/reykjavikur-marathon/view/176637",
+      notes: "",
+    },
     {
       year: 2026,
       distance: "8K",
