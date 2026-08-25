@@ -146,6 +146,7 @@
               ? `<a href="${r.url}" target="_blank" rel="noopener">${safeText(r.time)}</a>`
               : safeText(r.time),
         },
+        { key: "pace", label: "Pace" },
       ],
       rows
     );
