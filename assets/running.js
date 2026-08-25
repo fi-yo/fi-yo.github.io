@@ -315,12 +315,12 @@
     const halfMarathonsCompleted = (data.raceResults || []).filter((r) => r.distance === "13.1M").length;
     const marathonsCompleted = (data.raceResults || []).filter((r) => r.distance === "26.2M").length;
 
-    // Countries heuristic: if location has "Germany" => Germany; else if "UK" or "England" => UK; else USA.
+    // Countries heuristic: if location has "Germany" => Germany; "Iceland" => Iceland; else USA.
     const countries = new Set();
     for (const r of data.raceResults || []) {
       const loc = (r.location || "").toLowerCase();
       if (loc.includes("germany")) countries.add("Germany");
-      else if (loc.includes("uk") || loc.includes("england")) countries.add("UK");
+      else if (loc.includes("iceland")) countries.add("Iceland");
       else if (loc.trim()) countries.add("USA");
     }
 

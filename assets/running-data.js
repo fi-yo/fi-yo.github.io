@@ -40,7 +40,7 @@ window.RUNNING_DATA = {
       race: "California International Marathon",
       location: "Sacramento, CA",
       date: "2026-12-06",
-      notes: "Deferred from 2025",
+      notes: "Deferred from 2025; PAUSATF race with West Valley Track Club",
       url: "https://runsra.org/california-international-marathon/"
     }
   ],
