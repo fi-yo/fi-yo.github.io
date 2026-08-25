@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Applets | Fiona Young</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+
+  <body>
+    <a href="/" class="back-link">← Back</a>
+
+
+
+    <header>
+      <h1>Applets</h1>
+    </header>
+
+    <main>
+      <details open>
+        <summary>Games & Visualizations</summary>
+        <div class="content">
+          <ul class="list">
+            <li>
+              <strong><a href="/applets/setris.html">Setris</a></strong> — a SET × Tetris mashup.
+            </li>
+          </ul>
+        </div>
+      </details>
+    </main>
+
+    <footer class="footer">
+      <small>© <span id="y"></span> Fiona Young</small>
+    </footer>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
