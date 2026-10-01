@@ -12,6 +12,13 @@ window.RUNNING_DATA = {
       url: "https://www.marinemarathon.com/"
     },
     {
+      distance: "5K",
+      race: "Thanksgiving Day Gobble Wobble 5K",
+      location: "Alpharetta, GA",
+      date: "2026-11-26",
+      url: "https://runsignup.com/Race/GA/Alpharetta/ThanksgivingDayGobbleWobble5KFunRun"
+    },
+    {
       distance: "26.2M",
       race: "California International Marathon",
       location: "Sacramento, CA",
