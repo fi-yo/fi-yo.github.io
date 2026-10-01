@@ -5,30 +5,6 @@ window.RUNNING_DATA = {
 
   upcoming: [
     {
-      distance: "1M",
-      race: "New Balance 5th Avenue Mile",
-      location: "5th Avenue, NYC",
-      date: "2026-09-13",
-      url: "https://en.wikipedia.org/wiki/Fifth_Avenue_Mile",
-      notes: "9+1 for 2027 NYC Marathon",
-    },
-    {
-      distance: "13.1M",
-      race: "Urban Cow Half Marathon",
-      location: "Sacramento, CA",
-      date: "2026-09-27",
-      url: "https://www.urbancowhalf.com/",
-      notes: "PAUSATF race with West Valley Track Club",
-    },
-    {
-      distance: "5K",
-      race: "NYRR Jersey City 5K",
-      location: "Jersey City",
-      date: "2026-10-04",
-      url: "https://events.nyrr.org/fcda115fba77d7d2c30c",
-      notes: "9+1 for 2027 NYC Marathon",
-    },
-    {
       distance: "26.2M",
       race: "Marine Corps Marathon",
       location: "Washington, D.C.",
@@ -64,11 +40,11 @@ window.RUNNING_DATA = {
     },
     {
       distance: "13.1M",
-      time: "1:44:55",
-      race: "Shamrock Half Marathon",
-      location: "Virginia Beach, VA",
-      date: "2022-03-20",
-      url: "https://www.athlinks.com/event/3175/results/Event/1003868/Course/2190387/Bib/3969",
+      time: "1:40:07",
+      race: "Urban Cow Half Marathon",
+      location: "Sacramento, CA",
+      date: "2026-09-27",
+      url: "https://my.raceresult.com/425239/details1?pid=5449",
     },
     {
       distance: "26.2M",
@@ -83,6 +59,16 @@ window.RUNNING_DATA = {
   raceResults: [
 
     // ===== 2026 =====
+    {
+      year: 2026,
+      distance: "13.1M",
+      time: "1:40:07",
+      race: "Urban Cow Half Marathon",
+      location: "Sacramento, CA",
+      date: "2026-09-27",
+      url: "https://my.raceresult.com/425239/details1?pid=5449",
+      notes: "PAUSATF race with West Valley Track Club",
+    },
     {
       year: 2026,
       distance: "26.2M",
