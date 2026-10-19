@@ -8,6 +8,55 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/styles.css" />
+    <style>
+      .clue + .clue {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border);
+      }
+      .clue-head {
+        margin: 0 0 0.35rem;
+        font-size: 0.9rem;
+      }
+      .meta {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .clue-text {
+        margin: 0;
+        font-size: 1.15rem;
+        line-height: 1.6;
+      }
+      .enum {
+        color: var(--muted);
+        white-space: nowrap;
+      }
+      /* Lightweight reveal, overriding the boxed site-wide <details> style */
+      details.answer {
+        margin: 0.6rem 0 0;
+        padding: 0;
+        border: none;
+        background: none;
+      }
+      details.answer summary {
+        display: inline-block;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--accent);
+      }
+      details.answer summary:hover {
+        text-decoration: underline;
+      }
+      details.answer[open] summary {
+        color: var(--muted);
+      }
+      details.answer p {
+        margin: 0.4rem 0 0;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+    </style>
   </head>
 
   <body>
@@ -16,29 +65,33 @@
     <header>
       <h1>Cryptic Puzzles</h1>
       <p class="muted">
-        Cryptic crosswords I've written. Every clue is a small puzzle of its own: a definition and a piece of wordplay, each pointing to the same answer.
+        Cryptic clues and puzzles I've written. Every clue is a small puzzle of its own: a definition and a piece of wordplay, each pointing to the same answer.
       </p>
     </header>
 
     <main>
       <details open>
-        <summary>Puzzles</summary>
+        <summary>Clues</summary>
         <div class="content">
-          <p class="muted">Coming soon.</p>
 
           <!--
-            To add a puzzle, drop the PDFs into /fun/cryptics/puzzles/ and
-            replace the "Coming soon" line above with a list like this
-            (newest first):
-
-            <ul class="list">
-              <li>
-                <strong><a href="/fun/cryptics/puzzles/NAME.pdf">Puzzle Title</a></strong>
-                <span class="meta">(Month DD, YYYY)</span> — a one-line teaser.
-                <a href="/fun/cryptics/puzzles/NAME-solution.pdf">Solution</a>
-              </li>
-            </ul>
+            Newest first. To add a clue, copy an <article class="clue"> block,
+            bump the number, and update the date, clue text, enumeration,
+            and answer.
           -->
+
+          <article class="clue">
+            <p class="clue-head"><strong>No. 1</strong> <span class="meta">· October 18, 2026</span></p>
+            <p class="clue-text">
+              Curried function fundamental: doubly dual, crazy messed up discrete math without the digits
+              <span class="enum">(7,5)</span>
+            </p>
+            <details class="answer">
+              <summary>Reveal answer</summary>
+              <p>Coconut cream</p>
+            </details>
+          </article>
+
         </div>
       </details>
     </main>
