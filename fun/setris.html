@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Setris</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap');
+
+  :root {
+    --bg: #0e0e12;
+    --surface: #16161d;
+    --border: #2a2a38;
+    --accent: #c8f060;
+    --accent2: #f060a0;
+    --accent3: #60c8f0;
+    --text: #e8e8f0;
+    --muted: #5a5a72;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Space Mono', monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px;
+    overflow-x: hidden;
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 2.2rem;
+    letter-spacing: -1px;
+    margin-bottom: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .subtitle {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .hud {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 16px;
+  }
+  .hud-item { text-align: center; }
+  .hud-label { color: var(--muted); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; }
+  .hud-value { font-size: 22px; font-weight: 700; font-family: 'Syne', sans-serif; color: var(--accent); }
+
+  /* fixed-size tank — never grows */
+  .board-wrap {
+    position: relative;
+    width: 460px;
+    height: 540px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--surface);
+    flex-shrink: 0;
+  }
+
+  .board {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .danger-line {
+    position: absolute;
+    top: 80px; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent2), transparent);
+    opacity: 0.6;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  /* cards positioned + rotated entirely via JS / physics */
+  .card {
+    position: absolute;
+    width: 50px;
+    height: 62px;
+    border: 1.5px solid var(--border);
+    border-radius: 7px;
+    background: #1c1c26;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    pointer-events: none;   /* clicks handled at board level via Query.point */
+    user-select: none;
+    z-index: 1;
+    will-change: transform;
+  }
+
+  .card.selected {
+    border-color: var(--accent);
+    background: #1e2418;
+    z-index: 2;
+  }
+
+  .card.wrong {
+    border-color: var(--accent2) !important;
+    box-shadow: 0 0 6px var(--accent2);
+  }
+
+  /* freeze position via left/top before this plays, then let scale do the pop */
+  .card.clearing {
+    animation: pop 0.38s ease forwards;
+    z-index: 3;
+  }
+
+  @keyframes pop {
+    0%   { transform: rotate(var(--rot)) scale(1.05); opacity: 1; }
+    50%  { transform: rotate(var(--rot)) scale(1.3);  opacity: 0.7; }
+    100% { transform: rotate(var(--rot)) scale(0);    opacity: 0; }
+  }
+
+  .shapes { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .shape  { width: 18px; height: 13px; display: flex; align-items: center; justify-content: center; }
+  .shape svg { width: 17px; height: 12px; }
+
+  .message {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: #0e0e12ee;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 40px;
+    text-align: center;
+    z-index: 10;
+    display: none;
+  }
+  .message.show { display: block; }
+  .message h2 { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; margin-bottom: 8px; }
+  .message p  { color: var(--muted); font-size: 12px; margin-bottom: 18px; line-height: 1.7; max-width: 270px; }
+  .message button {
+    background: var(--accent);
+    color: #0e0e12;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 24px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 1px;
+  }
+  .message button:hover { opacity: 0.85; }
+
+  .flash {
+    position: fixed; inset: 0;
+    pointer-events: none; opacity: 0;
+    transition: opacity 0.1s; z-index: 100;
+  }
+  .flash.good { background: var(--accent); }
+  .flash.bad  { background: var(--accent2); }
+  .flash.on   { opacity: 0.08; }
+
+  .toast {
+    position: fixed; top: 80px; left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background: var(--accent); color: #0e0e12;
+    font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem;
+    padding: 7px 20px; border-radius: 99px;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s; z-index: 200;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  .instructions {
+    margin-top: 14px; font-size: 11px; color: var(--muted);
+    text-align: center; line-height: 1.9;
+  }
+  kbd { background: var(--border); border-radius: 4px; padding: 1px 5px; font-family: inherit; }
+</style>
+</head>
+<body>
+
+<h1>SETRIS</h1>
+<p>A rainy day in AG(4,3)...</p>
+<br>
+
+<div class="hud">
+  <div class="hud-item"><div class="hud-label">Score</div><div class="hud-value" id="score">0</div></div>
+  <div class="hud-item"><div class="hud-label">Level</div><div class="hud-value" id="level">1</div></div>
+  <div class="hud-item"><div class="hud-label">Sets</div><div class="hud-value" id="sets-found">0</div></div>
+  <div class="hud-item"><div class="hud-label">Combo</div><div class="hud-value" id="combo">×1</div></div>
+</div>
+
+<div class="board-wrap">
+  <div class="board" id="board">
+    <div class="danger-line"></div>
+  </div>
+  <div class="message show" id="msg-start">
+    <h2>SETRIS</h2>
+    <p>Click any 3 cards that form a valid SET to clear them.<br>Don't let the pile reach the red line!</p>
+    <button onclick="startGame()">Start</button>
+  </div>
+  <div class="message" id="msg-over">
+    <h2 style="color:var(--accent2);">GAME OVER</h2>
+    <p id="final-score"></p>
+    <button onclick="startGame()">Play Again</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<div class="flash" id="flash"></div>
+
+<div class="instructions">
+  Click 3 cards · All same or all different in each attribute · <kbd>H</kbd> hint
+</div>
+
+<script>
+// ── DIMENSIONS ────────────────────────────────────────────────────────────────
+const BOARD_W  = 460;
+const BOARD_H  = 540;
+const CARD_W   = 50;
+const CARD_H   = 62;
+const DANGER_Y = 80;    // card center must stay below this y (from top)
+const GRACE_MS = 2200;  // ms after spawn before game-over check kicks in
+
+// ── GAME TUNING ───────────────────────────────────────────────────────────────
+const SPAWN_MS   = 2400;
+const LEVEL_STEP = 5;
+const PTS_BASE   = 100;
+const COMBO_WIN  = 4000;
+
+// ── MATTER.JS ─────────────────────────────────────────────────────────────────
+const { Engine, Runner, Bodies, Composite, Query } = Matter;
+
+const engine = Engine.create({ gravity: { x: 0, y: 1, scale: 0.002 } });
+const world  = engine.world;
+
+// invisible walls + floor (always present)
+const WALL_T = 60;
+const floor     = Bodies.rectangle(BOARD_W/2, BOARD_H + WALL_T/2,     BOARD_W + 200, WALL_T, { isStatic: true });
+const wallLeft  = Bodies.rectangle(-WALL_T/2, BOARD_H/2,              WALL_T, BOARD_H * 3,   { isStatic: true });
+const wallRight = Bodies.rectangle(BOARD_W + WALL_T/2, BOARD_H/2,     WALL_T, BOARD_H * 3,   { isStatic: true });
+Composite.add(world, [floor, wallLeft, wallRight]);
+
+// single long-lived runner
+Runner.run(Runner.create(), engine);
+
+// ── SET LOGIC ─────────────────────────────────────────────────────────────────
+const r3 = () => Math.floor(Math.random() * 3);
+const makeAttrs = () => [r3(), r3(), r3(), r3()];
+
+function isValidSet(a, b, c) {
+  for (let i = 0; i < 4; i++)
+    if ((a[i] + b[i] + c[i]) % 3 !== 0) return false;
+  // Reject three identical cards: mathematically valid under the mod-3 rule,
+  // but a degenerate "set" that would trivialize the game. (Any duplicate pair
+  // in a valid triple forces all three to be identical, so this rules out
+  // duplicates without ever blocking a legitimate SET of distinct cards.)
+  const identical = a.every((v, i) => v === b[i] && v === c[i]);
+  if (identical) return false;
+  return true;
+}
+
+function findHint(list) {
+  for (let i = 0; i < list.length - 2; i++)
+    for (let j = i + 1; j < list.length - 1; j++)
+      for (let k = j + 1; k < list.length; k++)
+        if (isValidSet(list[i].attrs, list[j].attrs, list[k].attrs))
+          return [list[i].id, list[j].id, list[k].id];
+  return null;
+}
+
+// ── VISUAL ENCODING ───────────────────────────────────────────────────────────
+const COLORS = ['var(--accent)', 'var(--accent2)', 'var(--accent3)'];
+
+function shapeSVG(shape, color, fill) {
+  const c  = COLORS[color];
+  const f  = fill === 0 ? c : 'none';
+  const s  = fill === 0 ? 'none' : c;
+  const sw = fill === 0 ? 0 : 1.5;
+  const da = fill === 2 ? 'stroke-dasharray="3 2"' : '';
+  if (shape === 0)
+    return `<svg viewBox="0 0 17 12"><ellipse cx="8.5" cy="6" rx="7" ry="4.5" fill="${f}" stroke="${s}" stroke-width="${sw}" ${da}/></svg>`;
+  if (shape === 1)
+    return `<svg viewBox="0 0 17 12"><polygon points="8.5,1 16,6 8.5,11 1,6" fill="${f}" stroke="${s}" stroke-width="${sw}" ${da}/></svg>`;
+  return `<svg viewBox="0 0 17 12"><path d="M2,3 Q5,0 8.5,3 Q12,6 15,3 L15,9 Q12,12 8.5,9 Q5,6 2,9 Z" fill="${f}" stroke="${s}" stroke-width="${sw}" ${da}/></svg>`;
+}
+
+function renderCard(card) {
+  const [count, color, shape, fill] = card.attrs;
+  let html = '';
+  for (let i = 0; i <= count; i++)
+    html += `<div class="shape">${shapeSVG(shape, color, fill)}</div>`;
+  return `<div class="shapes">${html}</div>`;
+}
+
+// ── GAME STATE ────────────────────────────────────────────────────────────────
+let cards = [], selected = [];
+let score = 0, setsFound = 0, level = 1, combo = 1;
+let comboTimer = null, spawnTimer = null, rafId = null;
+let nextId = 0, gameRunning = false;
+const board = document.getElementById('board');
+
+// ── PHYSICS → DOM SYNC ────────────────────────────────────────────────────────
+function syncLoop() {
+  const now = Date.now();
+  for (const card of cards) {
+    const { x, y } = card.body.position;
+    const a = card.body.angle;
+    // position card element so its centre matches the physics body centre
+    card.el.style.left      = `${x - CARD_W / 2}px`;
+    card.el.style.top       = `${y - CARD_H / 2}px`;
+    card.el.style.transform = `rotate(${a}rad)`;
+
+    // game-over: a *settled* card (nearly at rest) has crept above the danger line.
+    // The speed check prevents a still-falling card from ending the game while it's
+    // just passing through the upper region.
+    if (gameRunning && now - card.spawnTime > GRACE_MS &&
+        y - CARD_H / 2 < DANGER_Y && card.body.speed < 0.4) {
+      gameOver();
+      return;
+    }
+  }
+  rafId = requestAnimationFrame(syncLoop);
+}
+
+// ── START / SPAWN ─────────────────────────────────────────────────────────────
+function startGame() {
+  gameRunning = false;
+  clearInterval(spawnTimer);
+  clearTimeout(comboTimer);
+  cancelAnimationFrame(rafId);
+
+  // remove all live card bodies from the physics world
+  Composite.clear(world, true);   // true = keep static bodies (walls/floor)
+
+  // remove DOM card elements
+  for (const c of cards) c.el?.remove();
+  board.querySelectorAll('.card').forEach(e => e.remove());
+
+  cards = []; selected = [];
+  score = 0; setsFound = 0; level = 1; combo = 1; nextId = 0;
+
+  document.getElementById('msg-start').classList.remove('show');
+  document.getElementById('msg-over').classList.remove('show');
+  updateHUD();
+
+  gameRunning = true;
+  syncLoop();
+
+  // stagger the initial seed so cards don't all land at once
+  for (let i = 0; i < 6; i++) setTimeout(spawnCard, i * 350);
+  spawnTimer = setInterval(spawnCard, SPAWN_MS);
+}
+
+function spawnCard() {
+  if (!gameRunning) return;
+
+  // random x, small random tilt so cards don't always fall perfectly flat
+  const cx    = CARD_W / 2 + 12 + Math.random() * (BOARD_W - CARD_W - 24);
+  const tilt  = (Math.random() - 0.5) * 0.4;
+
+  const body = Bodies.rectangle(cx, -(CARD_H / 2 + 6), CARD_W, CARD_H, {
+    restitution : 0.05,
+    friction    : 0.6,
+    frictionAir : 0.018,
+    density     : 0.002,
+    angle       : tilt,
+  });
+
+  const card = { id: nextId++, attrs: makeAttrs(), body, el: null, spawnTime: Date.now() };
+  const el = document.createElement('div');
+  el.className = 'card';
+  el.innerHTML = renderCard(card);
+  card.el = el;
+
+  board.appendChild(el);
+  Composite.add(world, body);
+  cards.push(card);
+}
+
+// ── CLICK HANDLING (physics-accurate hit test) ────────────────────────────────
+board.addEventListener('click', e => {
+  if (!gameRunning) return;
+  const rect = board.getBoundingClientRect();
+  const pt   = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+
+  // Query.point checks actual rotated vertices, not just AABB
+  const hits = Query.point(cards.map(c => c.body), pt);
+  if (!hits.length) return;
+
+  // if multiple overlap, prefer the one whose centre is nearest the click
+  let best = hits[0];
+  let bestD = Infinity;
+  for (const b of hits) {
+    const d = (b.position.x - pt.x) ** 2 + (b.position.y - pt.y) ** 2;
+    if (d < bestD) { bestD = d; best = b; }
+  }
+  const card = cards.find(c => c.body === best);
+  if (card) onCardClick(card);
+});
+
+// ── INTERACTION ───────────────────────────────────────────────────────────────
+function onCardClick(card) {
+  if (!gameRunning || !card.el) return;
+  const i = selected.indexOf(card);
+  if (i >= 0) {
+    selected.splice(i, 1);
+    card.el.classList.remove('selected');
+  } else {
+    selected.push(card);
+    card.el.classList.add('selected');
+    if (selected.length === 3) checkSet();
+  }
+}
+
+function checkSet() {
+  const [a, b, c] = selected;
+  if (isValidSet(a.attrs, b.attrs, c.attrs)) acceptSet(a, b, c);
+  else rejectSet();
+}
+
+function acceptSet(a, b, c) {
+  setsFound++;
+  score += Math.round(PTS_BASE * combo);
+
+  clearTimeout(comboTimer);
+  combo = Math.min(combo + 1, 8);
+  if (combo > 1) showToast(`COMBO ×${combo}!`);
+  comboTimer = setTimeout(() => { combo = 1; updateHUD(); }, COMBO_WIN);
+
+  const newLevel = Math.floor(setsFound / LEVEL_STEP) + 1;
+  if (newLevel > level) {
+    level = newLevel;
+    showToast(`LEVEL ${level}!`);
+  }
+
+  updateHUD();
+  doFlash('good');
+  selected = [];
+
+  for (const card of [a, b, c]) {
+    // pull body out of physics world immediately
+    Composite.remove(world, card.body);
+    cards = cards.filter(c => c.id !== card.id);
+
+    // freeze the element at its current position, then let the pop animation run
+    const { x, y } = card.body.position;
+    const ang = card.body.angle;
+    card.el.style.left = `${x - CARD_W / 2}px`;
+    card.el.style.top  = `${y - CARD_H / 2}px`;
+    card.el.style.setProperty('--rot', `${ang}rad`);
+    card.el.style.transform = '';  // animation takes over
+    card.el.classList.remove('selected');
+    card.el.classList.add('clearing');
+    setTimeout(() => card.el?.remove(), 400);
+  }
+}
+
+function rejectSet() {
+  doFlash('bad');
+  selected.forEach(c => {
+    c.el.classList.remove('selected');
+    c.el.classList.add('wrong');
+    setTimeout(() => c.el?.classList.remove('wrong'), 500);
+  });
+  selected = [];
+  combo = 1;
+  updateHUD();
+}
+
+// ── GAME OVER ─────────────────────────────────────────────────────────────────
+function gameOver() {
+  gameRunning = false;
+  clearInterval(spawnTimer);
+  clearTimeout(comboTimer);
+  cancelAnimationFrame(rafId);
+  document.getElementById('final-score').textContent =
+    `Score: ${score}  ·  Sets: ${setsFound}  ·  Level: ${level}`;
+  document.getElementById('msg-over').classList.add('show');
+}
+
+// ── HUD / FX ──────────────────────────────────────────────────────────────────
+function updateHUD() {
+  document.getElementById('score').textContent      = score;
+  document.getElementById('level').textContent      = level;
+  document.getElementById('sets-found').textContent = setsFound;
+  document.getElementById('combo').textContent      = `×${combo}`;
+}
+
+function doFlash(type) {
+  const el = document.getElementById('flash');
+  el.className = `flash ${type} on`;
+  setTimeout(() => el.classList.remove('on'), 150);
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1300);
+}
+
+// ── TAB VISIBILITY ────────────────────────────────────────────────────────────
+// When the tab is hidden, the physics runner and rAF sync loop freeze, but the
+// spawn interval would keep firing — piling up cards that all drop at once on
+// return. Pause spawning (and the sync loop) while hidden; resume on return.
+document.addEventListener('visibilitychange', () => {
+  if (!gameRunning) return;
+  if (document.hidden) {
+    clearInterval(spawnTimer);
+    cancelAnimationFrame(rafId);
+  } else {
+    // resume: treat every live card as freshly landed so the game-over grace
+    // period restarts (avoids an instant end from the time spent away)
+    const now = Date.now();
+    for (const c of cards) c.spawnTime = now;
+    spawnTimer = setInterval(spawnCard, SPAWN_MS);
+    syncLoop();
+  }
+});
+
+// H = hint
+document.addEventListener('keydown', e => {
+  if ((e.key === 'h' || e.key === 'H') && gameRunning) {
+    selected.forEach(c => c.el.classList.remove('selected'));
+    selected = [];
+    const ids = findHint(cards);
+    if (ids) ids.forEach(id => {
+      const card = cards.find(c => c.id === id);
+      if (card) { card.el.classList.add('selected'); selected.push(card); }
+    });
+  }
+});
+</script>
+</body>
+</html>

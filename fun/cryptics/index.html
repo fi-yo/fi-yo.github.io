@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Cryptic Puzzles | Fiona Young</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+
+  <body>
+    <a href="/fun/" class="back-link">← Back</a>
+
+    <header>
+      <h1>Cryptic Puzzles</h1>
+      <p class="muted">
+        Cryptic crosswords I've written. Every clue is a small puzzle of its own: a definition and a piece of wordplay, each pointing to the same answer.
+      </p>
+    </header>
+
+    <main>
+      <details open>
+        <summary>Puzzles</summary>
+        <div class="content">
+          <p class="muted">Coming soon.</p>
+
+          <!--
+            To add a puzzle, drop the PDFs into /fun/cryptics/puzzles/ and
+            replace the "Coming soon" line above with a list like this
+            (newest first):
+
+            <ul class="list">
+              <li>
+                <strong><a href="/fun/cryptics/puzzles/NAME.pdf">Puzzle Title</a></strong>
+                <span class="meta">(Month DD, YYYY)</span> — a one-line teaser.
+                <a href="/fun/cryptics/puzzles/NAME-solution.pdf">Solution</a>
+              </li>
+            </ul>
+          -->
+        </div>
+      </details>
+    </main>
+
+    <footer class="footer">
+      <small>© <span id="y"></span> Fiona Young</small>
+    </footer>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
