@@ -23,7 +23,7 @@ window.RUNNING_DATA = {
       distance: "52.4M",
       race: "San Francisco Ultramarathon",
       location: "San Francisco, CA",
-      date: "2027-07-24",
+      date: "2027-07-25",
       url: "https://www.thesfmarathon.com/ultramarathon/"
     }
   ],
