@@ -692,7 +692,6 @@ window.RUNNING_DATA = {
 
     other: [
       { name: "Big Sur International Marathon", url: "https://www.bsim.org/" },
-      { name: "San Francisco Marathon", url: "https://www.thesfmarathon.com/" },
       { name: "Baystate Marathon", url: "https://www.baystatemarathon.com/" },
       { name: "Martha's Vineyard Marathon", url: "" },
       { name: "Wineglass Marathon", url: "https://www.wineglassmarathon.com/" },
