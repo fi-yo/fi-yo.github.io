@@ -5,13 +5,6 @@ window.RUNNING_DATA = {
 
   upcoming: [
     {
-      distance: "26.2M",
-      race: "Marine Corps Marathon",
-      location: "Washington, D.C.",
-      date: "2026-10-25",
-      url: "https://www.marinemarathon.com/"
-    },
-    {
       distance: "5K",
       race: "Thanksgiving Day Gobble Wobble 5K",
       location: "Alpharetta, GA",
@@ -25,6 +18,13 @@ window.RUNNING_DATA = {
       date: "2026-12-06",
       notes: "PAUSATF race with West Valley Track Club",
       url: "https://runsra.org/california-international-marathon/"
+    },
+    {
+      distance: "52.4M",
+      race: "San Francisco Ultramarathon",
+      location: "San Francisco, CA",
+      date: "2027-07-24",
+      url: "https://www.thesfmarathon.com/ultramarathon/"
     }
   ],
 
@@ -55,17 +55,27 @@ window.RUNNING_DATA = {
     },
     {
       distance: "26.2M",
-      time: "3:34:33",
-      race: "Islandsbanki Reykjavik Marathon",
-      location: "Reykjavik, Iceland",
-      date: "2026-08-22",
-      url: "https://results.corsa.is/reykjavikur-marathon/view/176637"
+      time: "3:29:31",
+      race: "Marine Corps Marathon",
+      location: "Washington, D.C.",
+      date: "2026-10-25",
+      url: "https://rtrt.me/ulink/MCMA/MCM-2026/tracker/RCFA829T/focus"
     }
   ],
 
   raceResults: [
 
     // ===== 2026 =====
+    {
+      year: 2026,
+      distance: "26.2M",
+      time: "3:29:31",
+      race: "Marine Corps Marathon",
+      location: "Washington, D.C.",
+      date: "2026-10-25",
+      url: "https://rtrt.me/ulink/MCMA/MCM-2026/tracker/RCFA829T/focus",
+      notes: "",
+    },
     {
       year: 2026,
       distance: "13.1M",
