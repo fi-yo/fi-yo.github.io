@@ -25,6 +25,13 @@ window.RUNNING_DATA = {
       location: "San Francisco, CA",
       date: "2027-07-25",
       url: "https://www.thesfmarathon.com/ultramarathon/"
+    },
+    {
+      distance: "26.2M",
+      race: "TCS New York City Marathon",
+      location: "New York, NY",
+      date: "2027-11-07",
+      url: "https://www.nyrr.org/tcsnycmarathon"
     }
   ],
 
